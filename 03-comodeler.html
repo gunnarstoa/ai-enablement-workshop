@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CoModeler Deep-Dive + Labs — AI Enablement Lab Guide</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <div class="mobile-header">
+    <button id="hamburger">☰</button>
+    <span>AI Enablement Lab Guide</span>
+  </div>
+
+  <nav class="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-title">AI Enablement</div>
+      <div class="sidebar-subtitle">Anaplan Partner Onboarding</div>
+    </div>
+    <ul class="nav-list">
+      <li class="nav-section-title">Getting Started</li>
+      <li><a class="nav-link" href="./index.html">Workshop Home</a></li>
+      <li><a class="nav-link" href="./01-overview.html">Workshop Overview</a></li>
+      <li><a class="nav-link" href="./02-case-study.html">Case Study: NovaTrend</a></li>
+      <li class="nav-section-title">CoModeler</li>
+      <li><a class="nav-link active" href="./03-comodeler.html">CoModeler Deep-Dive + Labs</a></li>
+      <li class="nav-section-title">Agent Studio</li>
+      <li><a class="nav-link" href="./04-agent-studio.html">Agent Studio + Custom Analyst</a></li>
+      <li class="nav-section-title">Pre-Sales</li>
+      <li><a class="nav-link" href="./05-presales-demo.html">Pre-Sales Demo Playbook</a></li>
+      <li class="nav-section-title">Reference</li>
+      <li><a class="nav-link" href="./06-limitations.html">Limitations Quick Reference</a></li>
+      <li><a class="nav-link" href="./07-roadmap.html">Roadmap Snapshot (Apr 2026)</a></li>
+      <li><a class="nav-link" href="./08-partner-enablement.html">Partner Enablement</a></li>
+      <li><a class="nav-link" href="./09-qanda.html">Q&amp;A from Session</a></li>
+      <li><a class="nav-link" href="./10-facilitator.html">Facilitator Guide</a></li>
+    </ul>
+  </nav>
+
+  <main class="main-content">
+    <div class="content-header">
+      <h1>CoModeler Deep-Dive + Labs</h1>
+      <p class="subtitle">Capabilities, limitations, prompting best practices + Labs 2A, 2B, 2C</p>
+      <div class="badge-row">
+        <span class="content-badge">CoModeler</span>
+        <span class="content-badge">AI Builder</span>
+        <span class="content-badge">Labs 2A–2C</span>
+        <span class="content-badge">60 min</span>
+      </div>
+    </div>
+    <div class="content-body">
+      <div class="tsd-banner">
+        <div class="tsd-step tsd-step-tell">
+          <div class="tsd-step-label">📖 Tell</div>
+          <div class="tsd-step-desc">Understand what CoModeler is, what it can and cannot do, and how to prompt it effectively.</div>
+        </div>
+        <div class="tsd-step tsd-step-show">
+          <div class="tsd-step-label">🖥️ Show</div>
+          <div class="tsd-step-desc">See CoModeler opened in an Anaplan model. Walk through the Agent Studio configuration for CoModeler access.</div>
+        </div>
+        <div class="tsd-step tsd-step-do">
+          <div class="tsd-step-label">🛠️ Do</div>
+          <div class="tsd-step-desc">Complete Labs 2A, 2B, and 2C using the NovaTrend scenario.</div>
+        </div>
+      </div>
+
+      <div class="screenshot-wrap">
+        <img src="./img/ss-1080.jpg" alt="CoModeler Overview slide from Leo's session" class="screenshot">
+        <p class="screenshot-caption">CoModeler Overview — what it is, how it processes requests, key limitations (slide 21)</p>
+      </div>
+
+      <h2>What CoModeler Is</h2>
+      <p>CoModeler is Anaplan's AI-powered model-building assistant. Leo's definition from the session: <em>"A very junior model builder that knows a lot."</em> It has deep business context (trained on the internet), knows Anaplan well (fine-tuned on Anapedia and plan content), but requires supervision — especially on complex models.</p>
+
+      <p>It lives <strong>inside a model</strong>. It cannot interact with anything outside the model: no tenant management, no user management, no UX, no ADO, no workflow.</p>
+
+      <h2>Capabilities</h2>
+            <div class="table-wrap">
+        <table>
+          <thead><tr><th>Capability</th><th>Strength</th><th>Notes</th></tr></thead>
+          <tbody>
+        <tr><td>Build new models from scratch</td><td>Strong</td><td>Can generate modules, lists, line items from a prompt or spec file. Not perfect — check output.</td></tr>
+        <tr><td>Bulk rename / bulk edit</td><td>Very strong</td><td>Experts love this. Rename all line items on a module, change naming conventions across a model.</td></tr>
+        <tr><td>Document a model</td><td>Strongest capability</td><td>Line item dictionaries, notes on line items, exportable documentation. Wow factor.</td></tr>
+        <tr><td>Model health check</td><td>Moderate</td><td>Identifies unused modules/line items, best-practice issues. Points you to problems; doesn't fix them.</td></tr>
+        <tr><td>Extend application models</td><td>Moderate (with guidance)</td><td>Works better when you provide context (e.g. 'this is a Polaris model — use Polaris best practices').</td></tr>
+        <tr><td>Formula optimization suggestions</td><td>Limited</td><td>Can suggest improvements but cannot make the change itself yet.</td></tr>
+        <tr><td>Data import setup</td><td>Partial</td><td>Can read a CSV, set up import action. Cannot execute the import.</td></tr>
+        <tr><td>Fix broken formulas</td><td>Weak</td><td>Better to build rev 02 of a module with corrections than ask it to fix rev 01.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="screenshot-wrap">
+        <img src="./img/ss-1500.jpg" alt="CoModeler Core Capabilities — Supported, Out of Scope, Known Opportunities" class="screenshot">
+        <p class="screenshot-caption">CoModeler capabilities matrix from Leo's session — green = supported, amber = out of scope, orange = known opportunities (slide 24)</p>
+      </div>
+
+      <h2>Limitations Table</h2>
+            <div class="table-wrap">
+        <table>
+          <thead><tr><th>Cannot Do</th><th>Why It Matters</th></tr></thead>
+          <tbody>
+        <tr><td>Work on deployed models</td><td>Standard model only. Always check model status before using CoModeler.</td></tr>
+        <tr><td>Classic dashboards</td><td>No UX work. Pages, grids, charts — all out of scope.</td></tr>
+        <tr><td>ALM (Application Lifecycle Management)</td><td>Cannot push changes through ALM pipeline.</td></tr>
+        <tr><td>User / tenant management</td><td>Completely out of scope. Anything outside the model.</td></tr>
+        <tr><td>Change calendar / time ranges</td><td>Time settings are immutable from CoModeler.</td></tr>
+        <tr><td>Import data (execute)</td><td>Can set up the import action; cannot run it.</td></tr>
+        <tr><td>Bulk copy actions</td><td>Cannot create or manage action sets.</td></tr>
+        <tr><td>Count cells / sum values</td><td>Poor at math/aggregation within conversations.</td></tr>
+        <tr><td>Read conversation history</td><td>No memory across sessions. Start fresh each time.</td></tr>
+        <tr><td>Interact with other AI products</td><td>CoModeler and Custom Analyst do not communicate.</td></tr>
+        <tr><td>Work across multiple models simultaneously</td><td>One model, one context window.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout-warning">
+        <span class="callout-label">⚠️ Delete Operations</span>
+        <p>CoModeler will attempt delete operations when asked, but often fails silently if there are dependencies. It always asks you to approve before acting — but it does not always detect dependency chains before prompting. Always verify after any delete request.</p>
+      </div>
+
+      <h2>Prompting Best Practices</h2>
+      <p>CoModeler is not chatty like ChatGPT. It thrives on precision, not conversation. Here is what works:</p>
+
+      <h3>Be Specific</h3>
+      <ul>
+        <li><strong>Weak:</strong> "I need help with my budget model"</li>
+        <li><strong>Strong:</strong> "In module REV-01, create 5 new line items: [names], all summing parent SUM-REV, formatted as currency, two decimals"</li>
+      </ul>
+
+      <h3>Use the Spec File Pattern</h3>
+      <p>A spec file is a CSV that describes what you want built. Think of it as typing out your requirements in a structured format before asking CoModeler to execute. Columns typically include: module name, list dimensions, line item names, format, formula skeleton.</p>
+
+      <div class="callout-tip">
+        <span class="callout-label">💡 Spec File Tip</span>
+        <p>Upload the CSV, then write a short prompt: "Using the attached spec file, create the modules and line items described. Use these naming conventions: [your standard]." This consistently outperforms plain text prompts for model-building tasks.</p>
+      </div>
+
+      <h3>Context Injection (for Application Models)</h3>
+      <p>CoModeler cannot currently distinguish between a Polaris app model and a custom-built model. When working on application extensions, explicitly tell it:</p>
+      <ul>
+        <li>"This is an Anaplan Polaris model — please follow Polaris best practices"</li>
+        <li>"This model uses the [app name] naming convention: [describe it]"</li>
+      </ul>
+
+      <h3>Parallel Tabs</h3>
+      <p>Expert builders open multiple CoModeler tabs. While one is "thinking" (can take 3–5 minutes for large tasks), they work in another module via a second tab. Treat it like co-authoring with a colleague.</p>
+
+      <h3>Context Window — 5 Interactions</h3>
+      <p>Keep conversations to ~5 interactions. Beyond that, CoModeler loses earlier context. If a conversation goes sideways or hallucinates, start a new one — there is no recovering from a hallucination loop within the same conversation.</p>
+
+      <h2>Prompt Library</h2>
+      <p>Leo shared a prompt library in the partner folder. Key prompts from the session:</p>
+
+      <div class="callout-note">
+        <span class="callout-label">📋 Prompt: Model Health Check</span>
+        <p>"Review this model for health issues. Identify: (1) modules with no downstream references, (2) line items that are never used in formulas, (3) any modules that appear to be orphaned. Present findings as a list with module name and issue type."</p>
+      </div>
+
+      <div class="callout-note">
+        <span class="callout-label">📋 Prompt: Line Item Dictionary</span>
+        <p>"Generate a complete line item dictionary for module [MODULE NAME]. For each line item include: name, format, applies to dimensions, formula (if any), and a plain English description of what it represents in a [BUSINESS CONTEXT] planning model."</p>
+      </div>
+
+      <div class="callout-note">
+        <span class="callout-label">📋 Prompt: Bulk Rename</span>
+        <p>"In module [MODULE NAME], rename all line items to match this naming convention: [CONVENTION]. Here are the current names and their intended new names: [LIST]. Apply all renames."</p>
+      </div>
+
+      <div class="callout-note">
+        <span class="callout-label">📋 Prompt: New Module from Scratch</span>
+        <p>"Create a new module called [NAME] dimensioned by [LIST1] × [LIST2] × Time. Add the following line items: [LIST with formats]. This module will [PURPOSE]. Use best practices for module layout."</p>
+      </div>
+
+      <h2>LLM Roadmap</h2>
+      <p>CoModeler currently runs on <strong>ChatGPT 4.0</strong>. The upgrade to <strong>Claude</strong> is targeted for H2 2026 (treat this as December 31, 2026 until Anaplan announces a specific date). The new model will enable:</p>
+      <ul>
+        <li>Better ability to distinguish application models from custom builds</li>
+        <li>Persistent prompt notepad (save prompts inside CoModeler)</li>
+        <li>Model Optimizer capability (suggest and apply formula improvements)</li>
+      </ul>
+
+      <hr>
+      <h2>Lab 2A — First Conversation</h2>
+            <div class="mini-lab">
+        <div class="mini-lab-header">
+          <div class="mini-lab-number">2A</div>
+          <div class="mini-lab-title">First Conversation with CoModeler</div>
+          <div class="mini-lab-duration">⏱ 15 min</div>
+        </div>
+        <div class="mini-lab-body">
+          <p><strong>Objective:</strong> Open CoModeler in a real model and produce a line item dictionary for one module.</p>
+          <h4>Steps</h4>
+          <ol>
+          <li>Open your Anaplan model (must be a standard, non-deployed model).</li>
+          <li>Click the CoModeler icon in the top toolbar.</li>
+          <li>If you don't see it, confirm your tenant admin has enabled CoModeler for your workspace via Agent Studio.</li>
+          <li>Type this prompt: "What is this model about? List the modules you can see and describe the purpose of each in one sentence."</li>
+          <li>Review the response. Note: CoModeler is reading the model structure in real-time.</li>
+          <li>Follow up: "Generate a line item dictionary for the module with the most line items. Include: name, format, dimensions, and a plain English description."</li>
+          <li>Download the response (use the download icon in the chat).</li>
+          <li>Save the output — you will use it in Lab 3B.</li>
+          </ol>
+          <h4>Debrief</h4>
+          <ul>
+          <li>How long did CoModeler take to respond to each prompt?</li>
+          <li>Did the line item descriptions make sense for the business context? Did any seem hallucinated?</li>
+          <li>What module did it identify as the most complex? Does that match your expectation?</li>
+          </ul>
+        </div>
+      </div>
+
+      <hr>
+      <h2>Lab 2B — Spec File Build</h2>
+            <div class="mini-lab">
+        <div class="mini-lab-header">
+          <div class="mini-lab-number">2B</div>
+          <div class="mini-lab-title">Build a Module Using a Spec File</div>
+          <div class="mini-lab-duration">⏱ 20 min</div>
+        </div>
+        <div class="mini-lab-body">
+          <p><strong>Objective:</strong> Create a CSV spec file for a simple NovaTrend revenue module and use CoModeler to build it.</p>
+          <h4>Steps</h4>
+          <ol>
+          <li>Create a CSV file with columns: Module, Dimension1, Dimension2, LineItem, Format, Formula, Description.</li>
+          <li>Add 3–5 rows for a simple Revenue Actuals module. Use NovaTrend's regions as Dimension1, Products as Dimension2.</li>
+          <li>Save as <code>novatrend-revenue-spec.csv</code>.</li>
+          <li>In CoModeler, upload the CSV file.</li>
+          <li>Type this prompt: "Using the attached spec file, create the module and line items described. Apply standard Anaplan naming conventions. This is a consumer goods revenue model."</li>
+          <li>Approve each step as CoModeler presents it.</li>
+          <li>After creation, ask: "Add a description note to each line item you just created explaining its purpose."</li>
+          <li>Verify the module was created correctly in the model.</li>
+          </ol>
+          <h4>Debrief</h4>
+          <ul>
+          <li>Did CoModeler follow the spec exactly? What did it get right or wrong?</li>
+          <li>How did the description notes compare to what you would have written manually?</li>
+          <li>What would you change in the spec file format to get better output?</li>
+          </ul>
+        </div>
+      </div>
+
+      <hr>
+      <h2>Lab 2C — Documentation &amp; Model Health</h2>
+            <div class="mini-lab">
+        <div class="mini-lab-header">
+          <div class="mini-lab-number">2C</div>
+          <div class="mini-lab-title">Documentation Export and Model Health Check</div>
+          <div class="mini-lab-duration">⏱ 15 min</div>
+        </div>
+        <div class="mini-lab-body">
+          <p><strong>Objective:</strong> Use CoModeler to generate exportable model documentation and run a health check.</p>
+          <h4>Steps</h4>
+          <ol>
+          <li>In CoModeler, type: "Run a model health check. Identify any modules with no downstream references, unused line items, or orphaned lists. Present as a prioritized list."</li>
+          <li>Review the output. Note any issues flagged.</li>
+          <li>Next, type: "Generate documentation for this entire model. For each module, include: purpose, dimensions, key line items, and how it connects to other modules. Format for export."</li>
+          <li>Download the documentation export.</li>
+          <li>Open the exported file and review quality. This is what you would hand a new model builder joining the project.</li>
+          <li>Optional: Paste the documentation text into ChatGPT or Claude and ask it to enrich the descriptions. Compare the two versions.</li>
+          </ol>
+          <h4>Debrief</h4>
+          <ul>
+          <li>What health issues did CoModeler find? Were they real issues or false positives?</li>
+          <li>How complete was the documentation? Would you trust it without a manual review?</li>
+          <li>How long would this documentation have taken to produce manually?</li>
+          </ul>
+        </div>
+      </div>
+      <div class="prevnext-nav">
+      <a class="prevnext-prev" href="./02-case-study.html">&larr; Case Study</a>
+      <a class="prevnext-next" href="./04-agent-studio.html">Agent Studio &rarr;</a>
+      </div>
+    </div>
+  </main>
+  <script src="./js/nav.js"></script>
+</body>
+</html>

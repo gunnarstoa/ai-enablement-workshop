@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Q&A Reference — AI Enablement Lab Guide</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <div class="mobile-header">
+    <button id="hamburger">☰</button>
+    <span>AI Enablement Lab Guide</span>
+  </div>
+
+  <nav class="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-title">AI Enablement</div>
+      <div class="sidebar-subtitle">Anaplan Partner Onboarding</div>
+    </div>
+    <ul class="nav-list">
+      <li class="nav-section-title">Getting Started</li>
+      <li><a class="nav-link" href="./index.html">Workshop Home</a></li>
+      <li><a class="nav-link" href="./01-overview.html">Workshop Overview</a></li>
+      <li><a class="nav-link" href="./02-case-study.html">Case Study: NovaTrend</a></li>
+      <li class="nav-section-title">CoModeler</li>
+      <li><a class="nav-link" href="./03-comodeler.html">CoModeler Deep-Dive + Labs</a></li>
+      <li class="nav-section-title">Agent Studio</li>
+      <li><a class="nav-link" href="./04-agent-studio.html">Agent Studio + Custom Analyst</a></li>
+      <li class="nav-section-title">Pre-Sales</li>
+      <li><a class="nav-link" href="./05-presales-demo.html">Pre-Sales Demo Playbook</a></li>
+      <li class="nav-section-title">Reference</li>
+      <li><a class="nav-link" href="./06-limitations.html">Limitations Quick Reference</a></li>
+      <li><a class="nav-link" href="./07-roadmap.html">Roadmap Snapshot (Apr 2026)</a></li>
+      <li><a class="nav-link" href="./08-partner-enablement.html">Partner Enablement</a></li>
+      <li><a class="nav-link active" href="./09-qanda.html">Q&amp;A from Session</a></li>
+      <li><a class="nav-link" href="./10-facilitator.html">Facilitator Guide</a></li>
+    </ul>
+  </nav>
+
+  <main class="main-content">
+    <div class="content-header">
+      <h1>Q&amp;A from the April 2, 2026 Session</h1>
+      <p class="subtitle">All real questions with Leo Nunes' answers — organized by topic</p>
+      <div class="badge-row">
+        <span class="content-badge">Q&amp;A</span>
+        <span class="content-badge">Session Reference</span>
+      </div>
+    </div>
+    <div class="content-body">
+
+      <p>All questions from Leo Nunes' April 2, 2026 AI Enablement Onboarding Session. Organized by topic. Leo's answers are verbatim or closely paraphrased.</p>
+
+      <h2>Tenant Access &amp; Provisioning</h2>
+
+      <div class="callout-note">
+        <span class="callout-label">Q</span>
+        <p><strong>Q:</strong> To get the AI Admin setting, does it need to be in our primary workspace, or can we as partners be assigned the AI Admin role in our clients' workspaces?</p>
+        <p><strong>A:</strong> You can be assigned the AI Admin role on the client's workspace — as long as the partner has a licensed AI. The customer needs to have licensed AI. This is different from the Integration Admin role, which only works if it's your home tenant. For AI Admin, you can be assigned and operate on the client's workspace.</p>
+      </div>
+
+      <div class="callout-note">
+        <span class="callout-label">Q</span>
+        <p><strong>Q:</strong> Why can't we see CoModeler in customer tenants today?</p>
+        <p><strong>A:</strong> This is by design. Anaplan wants the customers to buy CoModeler. In an ideal situation, you'd be working with a customer who has purchased CoModeler and you can leverage it there. Today you'll only see it inside Carter's (partner) own tenant.</p>
+      </div>
+
+      <hr>
+      <h2>CoModeler Capabilities</h2>
+
+      <div class="callout-note">
+        <span class="callout-label">Q</span>
+        <p><strong>Q:</strong> If a client had CoModeler, could they go in when a bug comes up — say a user tried to input a driver but it's not flowing through to the income statement — could it identify where that is or does it need specific directions?</p>
+        <p><strong>A:</strong> CoModeler will not efficiently fix a formula. A better pattern: "Look at module REV-01. Build module REV-02 similar to REV-01 but with X, Y, Z changes." If CoModeler picked up what was wrong, it might say "this line item might not be optimized" — but it won't fix it by itself.</p>
+      </div>
+
+      <div class="callout-note">
+        <span class="callout-label">Q</span>
+        <p><strong>Q:</strong> Is CoModeler more for trained model builders rather than newer builders?</p>
+        <p><strong>A:</strong> Both, but differently. Expert model builders love it for bulk tasks — rename all line items, create list hierarchies 50 levels deep with sample items, or rename all line items on a module to a naming convention. The boring stuff is where they see the biggest value. For less experienced builders, it's more like an intelligent assistant — "propose how to start building something," "how would you design this?" For new model builders, think Level 3 training: instead of designing from scratch, ask CoModeler to propose a design and iterate from there.</p>
+      </div>
+
+      <div class="callout-note">
+        <span class="callout-label">Q</span>
+        <p><strong>Q:</strong> Can CoModeler mass-change line item references in a formula — from Line Item One to Module, Line Item Two?</p>
+        <p><strong>A:</strong> Leo flagged this as uncertain and said he would check with colleagues. No confirmed answer was provided in the session. Follow up with Leo via email for confirmation.</p>
+      </div>
+
+      <div class="callout-note">
+        <span class="callout-label">Q</span>
+        <p><strong>Q:</strong> How long does it take CoModeler to build something like a supply chain model from a prompt?</p>
+        <p><strong>A:</strong> Variable and inconsistent. In the Academy exercise, results have ranged from building modules + line items + populating formulas in one pass to stopping after step one and requiring follow-up prompts. Rough estimate: 5 minutes for CoModeler to generate a build plan after your prompt, then another 5–10 minutes to execute. Use multiple tabs while waiting — open a second CoModeler tab to work on a different module in parallel.</p>
+      </div>
+
+      <div class="callout-note">
+        <span class="callout-label">Q</span>
+        <p><strong>Q:</strong> When CoModeler is thinking on a large task, does it lock the model for other users?</p>
+        <p><strong>A:</strong> It depends on the task. If CoModeler is working on a specific module and a colleague is working on a different module, it's similar to co-authoring — both can work simultaneously. As with the classic Anaplan multi-builder situation, complications arise if multiple builders work on the same module at the same time. The same principle applies with CoModeler.</p>
+      </div>
+
+      <hr>
+      <h2>Custom Analyst &amp; Agent Studio</h2>
+
+      <div class="callout-note">
+        <span class="callout-label">Q</span>
+        <p><strong>Q:</strong> When Anaplan transitions from OpenAI to Claude for CoModeler, does that mean we need to retrain the agents? Will the dataset translate automatically?</p>
+        <p><strong>A:</strong> Leo confirmed: OpenAI → Claude for CoModeler. Not confirmed for Custom Analyst. For reconfiguration: he does not expect partners to need to rewrite analyst configurations when the LLM changes. The reason: the abstraction layer is all Anaplan-side — the modules, line items, semantic descriptions, and configured questions live in Anaplan. The LLM just reads that configuration. A new LLM would be trained to read it the same way.</p>
+      </div>
+
+      <div class="callout-note">
+        <span class="callout-label">Q</span>
+        <p><strong>Q:</strong> When is the OpenAI to Claude change happening?</p>
+        <p><strong>A:</strong> "Second half this year" — which in Anaplan means treat it as December 31, 2026. Could also be January 2027. Do not commit customers to a date. Leo's exact words: "H2 2026 in Anaplan means 31st of December, which might as well be 31st of January 2027."</p>
+      </div>
+
+      <div class="callout-note">
+        <span class="callout-label">Q</span>
+        <p><strong>Q:</strong> Does Custom Analyst understand synonyms? If a user asks a question not aligned with the exact wording it was trained on, will it re-ask or figure it out?</p>
+        <p><strong>A:</strong> It does understand synonyms, and there are better and worse ways to configure for this. "Revenue" is too generic — "total sales revenue" is better because it characterizes the concept. Better semantics produce better answers. Recommendation: start with 5–10 questions, then refine based on how business users naturally ask. Use ChatGPT or Gemini to enrich the semantic descriptions further before loading them into the analyst.</p>
+      </div>
+
+      <div class="callout-note">
+        <span class="callout-label">Q</span>
+        <p><strong>Q:</strong> Are the prompts that users give to Custom Analyst archived or saved? Does it lose context like ChatGPT does?</p>
+        <p><strong>A:</strong> No, conversation history is not saved. Context is maintained within a conversation for about 5 interactions — both CoModeler and Custom Analyst. Beyond that, context is likely to be lost. If either goes down a hallucination route, there is no recovering within that conversation — start a new one. Leo's recommendation: keep interactions to 5, then start fresh.</p>
+      </div>
+
+      <hr>
+      <h2>Next Steps &amp; Logistics</h2>
+
+      <div class="callout-note">
+        <span class="callout-label">Q</span>
+        <p><strong>Q:</strong> Can you send us the recording and the deck so we can share with those who couldn't make it?</p>
+        <p><strong>A:</strong> The deck is already in the shared SharePoint folder. The recording will be shared by Ben. Note: Leo plans to clean up the SharePoint folder at some point — use Seismic links as the permanent reference.</p>
+      </div>
+
+      <div class="prevnext-nav">
+      <a class="prevnext-prev" href="./08-partner-enablement.html">&larr; Partner Enablement</a>
+      <a class="prevnext-next" href="./10-facilitator.html">Facilitator Guide &rarr;</a>
+      </div>
+    </div>
+  </main>
+  <script src="./js/nav.js"></script>
+</body>
+</html>

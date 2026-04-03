@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Facilitator Guide — AI Enablement Lab Guide</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <div class="mobile-header">
+    <button id="hamburger">☰</button>
+    <span>AI Enablement Lab Guide</span>
+  </div>
+
+  <nav class="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-title">AI Enablement</div>
+      <div class="sidebar-subtitle">Anaplan Partner Onboarding</div>
+    </div>
+    <ul class="nav-list">
+      <li class="nav-section-title">Getting Started</li>
+      <li><a class="nav-link" href="./index.html">Workshop Home</a></li>
+      <li><a class="nav-link" href="./01-overview.html">Workshop Overview</a></li>
+      <li><a class="nav-link" href="./02-case-study.html">Case Study: NovaTrend</a></li>
+      <li class="nav-section-title">CoModeler</li>
+      <li><a class="nav-link" href="./03-comodeler.html">CoModeler Deep-Dive + Labs</a></li>
+      <li class="nav-section-title">Agent Studio</li>
+      <li><a class="nav-link" href="./04-agent-studio.html">Agent Studio + Custom Analyst</a></li>
+      <li class="nav-section-title">Pre-Sales</li>
+      <li><a class="nav-link" href="./05-presales-demo.html">Pre-Sales Demo Playbook</a></li>
+      <li class="nav-section-title">Reference</li>
+      <li><a class="nav-link" href="./06-limitations.html">Limitations Quick Reference</a></li>
+      <li><a class="nav-link" href="./07-roadmap.html">Roadmap Snapshot (Apr 2026)</a></li>
+      <li><a class="nav-link" href="./08-partner-enablement.html">Partner Enablement</a></li>
+      <li><a class="nav-link" href="./09-qanda.html">Q&amp;A from Session</a></li>
+      <li><a class="nav-link active" href="./10-facilitator.html">Facilitator Guide</a></li>
+    </ul>
+  </nav>
+
+  <main class="main-content">
+    <div class="content-header">
+      <h1>Facilitator Guide</h1>
+      <p class="subtitle">Delivery script, timing, setup checklist, debrief answer keys</p>
+      <div class="badge-row">
+        <span class="content-badge">Facilitator</span>
+        <span class="content-badge">Delivery</span>
+        <span class="content-badge">Script</span>
+      </div>
+    </div>
+    <div class="content-body">
+
+      <h2>About This Guide</h2>
+      <p>This guide is for facilitators running the AI Enablement workshop with a partner cohort. It follows the April 2, 2026 session structure from Leo Nunes. All timing is approximate — adjust based on group engagement and Q&amp;A depth.</p>
+
+      <h2>Setup Checklist</h2>
+      <ul class="checklist">
+        <li>All participants provisioned as AI Admins on partner tenant</li>
+        <li>CoModeler enabled for at least one shared workspace in Agent Studio</li>
+        <li>Anaplan model available (standard, non-deployed) with 10+ modules for demo</li>
+        <li>Seismic blueprint accessible and links verified</li>
+        <li>April 2, 2026 recording available for reference (confirm Ben cascaded to group)</li>
+        <li>CoModeler prompt library CSV uploaded to SharePoint / shared folder</li>
+        <li>Demo AI tenant copy available — coordinate with Leo/Ben if not yet provisioned</li>
+        <li>Academy links verified and active for CoModeler course</li>
+        <li>Screen sharing tested — browser with Anaplan open, CoModeler visible</li>
+      </ul>
+
+      <h2>Delivery Script</h2>
+
+      <h3>Opening (5 min)</h3>
+      <p><em>Script:</em> "Welcome, everyone. Today's session is the AI Enablement Onboarding and Kickoff. The goal is simple: get you started on Anaplan AI, point you to the enablement, introduce both AI products, and answer your questions. We'll get through the products in about 15 minutes each, check on tenant access, and finish with next steps. Feel free to ask questions as we go — I'll try to keep an eye on chat."</p>
+
+      <div class="callout-tip">
+        <span class="callout-label">💡 Facilitator Note</span>
+        <p>Open by asking who has already used CoModeler. A show of hands tells you how to calibrate depth. If most have — go faster on basics, deeper on limitations and prompting. If few have — spend more time on the first demo.</p>
+      </div>
+
+      <h3>AI Journey (10 min)</h3>
+      <p><em>Script:</em> "Before we dive into the products, let me give you context on how we got here. Anaplan's AI story starts in 2018 with Optimizer. [Walk through the timeline — 2018 Optimizer, 2019 PlanIQ, 2023 Syrup, late 2024 CoPlanet, 2025 CoModeler + Agent Studio GA.]"</p>
+      <p><em>Key point to make:</em> "One important clarification before we start — the ML APIs, which would let customers bring their own machine learning models, are roadmap only. They are not GA. You might see them in some Anaplan decks without that roadmap label — that's our mistake internally, not yours to make with customers."</p>
+
+      <h3>Tenant Provisioning Check (10 min)</h3>
+      <p><em>Script:</em> "Let me show you how CoModeler and Agent Studio access works from the admin side — and we'll use this to check that everyone in the room has access."</p>
+      <p><em>Steps:</em></p>
+      <ol>
+        <li>Open Anaplan → top-right dropdown → Administration → show "AI Admin" role assignment</li>
+        <li>Open Agent Studio → CoModeler tab → show workspace enablement</li>
+        <li>Ask participants: "Are you seeing CoModeler in your model? If not, raise your hand."</li>
+        <li>Resolve access issues live or note for follow-up with Ben/Mackenzie/Paul</li>
+      </ol>
+      <p><em>Script after check:</em> "Remember — today you'll only see CoModeler inside Carter's (partner) tenant, not on customer tenants. That's by design. Once a customer buys CoModeler, you can use it in their workspace."</p>
+
+      <h3>CoModeler Overview (15 min)</h3>
+      <p><em>Script:</em> "CoModeler is our intelligent AI builder. My favorite definition: a very junior model builder that knows a lot. It knows Anaplan. It knows business context. But you have to watch over what it does — it can make mistakes, and you have to check the output."</p>
+      <p><em>Demo points (in order):</em></p>
+      <ol>
+        <li>Show CoModeler opening in a model</li>
+        <li>Run documentation generation — show line item dictionary populating</li>
+        <li>Show the limitations (UX, ALM, deployed models) — be honest</li>
+        <li>Mention spec file pattern and share that the prompt library is in the shared folder</li>
+      </ol>
+      <p><em>Q&amp;A buffer: 5 min</em></p>
+
+      <div class="callout-tip">
+        <span class="callout-label">💡 Facilitator Note</span>
+        <p>The "5 interaction context window" and "no cross-session memory" points almost always generate questions. Prepare for: "So I have to redo everything each session?" Answer: "Yes — save your prompts externally and download conversation transcripts before closing. This is a roadmap item (persistent prompt notepad coming H2 2026)."</p>
+      </div>
+
+      <h3>Custom Analyst + Agent Studio (15 min)</h3>
+      <p><em>Script:</em> "Custom Analyst is our conversational AI for end users — not model builders. A planner can ask 'What is the forecast revenue for North America in Q3 2026?' and get the answer directly, without filing a request with IT or the model builder team."</p>
+      <p><em>Demo points (in order):</em></p>
+      <ol>
+        <li>Show Agent Studio → Analysts tab</li>
+        <li>Open a configured Custom Analyst — show the data source configuration</li>
+        <li>Run a live query — show the answer with source link</li>
+        <li>Show a time series question generating a visualization automatically</li>
+        <li>Run an out-of-scope question — show the "I can't answer that" response</li>
+        <li>Highlight security: "Queries run as the logged-in user — their row-level security applies"</li>
+      </ol>
+      <p><em>Q&amp;A buffer: 5 min</em></p>
+
+      <h3>Next Steps (5 min)</h3>
+      <p><em>Script:</em> "Before we wrap — a few things to do before our next touchpoint. First: complete the Enablement Blueprint on Seismic. If you don't have Seismic access, submit a Partner Portal request. Second: the technical workshop. I'm away next week, but I'm happy to run a live workshop — coordinate with Ben. Third: check your Academy access and start the CoModeler course if you haven't already. And send any questions over email — I'll respond or route them to the right person."</p>
+
+      <h2>Timing Guide</h2>
+            <div class="table-wrap">
+        <table>
+          <thead><tr><th>Section</th><th>Time</th><th>Cumulative</th></tr></thead>
+          <tbody>
+        <tr><td>Opening + intro</td><td>5 min</td><td>0:05</td></tr>
+        <tr><td>AI journey timeline</td><td>10 min</td><td>0:15</td></tr>
+        <tr><td>Tenant provisioning check</td><td>10 min</td><td>0:25</td></tr>
+        <tr><td>CoModeler overview + demo</td><td>15 min</td><td>0:40</td></tr>
+        <tr><td>CoModeler Q&A</td><td>5 min</td><td>0:45</td></tr>
+        <tr><td>Agent Studio + Custom Analyst overview + demo</td><td>15 min</td><td>1:00</td></tr>
+        <tr><td>Custom Analyst Q&A</td><td>5 min</td><td>1:05</td></tr>
+        <tr><td>Next steps + wrap</td><td>5 min</td><td>1:10</td></tr>
+        <tr><td>Buffer</td><td>10 min</td><td>1:20</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Debrief Answer Keys</h2>
+
+      <h3>Lab 2A — First Conversation</h3>
+      <ul>
+        <li><strong>Response time:</strong> Expect 30–90 seconds for model overview. Line item dictionary can take 2–5 minutes for large modules.</li>
+        <li><strong>Quality check:</strong> Descriptions should reflect business context. Hallucination signs: circular definitions, invented formula references, generic descriptions like "this line item stores data."</li>
+        <li><strong>Common issue:</strong> CoModeler picks a module that's simple (few line items) rather than the most complex. If this happens, explicitly name the module in the follow-up prompt.</li>
+      </ul>
+
+      <h3>Lab 2B — Spec File Build</h3>
+      <ul>
+        <li><strong>Common failures:</strong> Dimension columns not in the right format (CoModeler expects the list name as it exists in the model). If the list doesn't exist, CoModeler will either create it or fail silently.</li>
+        <li><strong>Good output indicator:</strong> Module appears in the model with correct dimensions and all line items visible. Description notes appear on hover.</li>
+        <li><strong>Most common variation:</strong> CoModeler creates the module but stops before adding descriptions. Prompt: "Now add description notes to each line item in [MODULE NAME]."</li>
+      </ul>
+
+      <h3>Lab 2C — Documentation &amp; Health Check</h3>
+      <ul>
+        <li><strong>Health check false positives:</strong> CoModeler frequently flags modules as "no downstream references" when those modules are actually referenced via saved views or exports. Always verify manually before acting on health check results.</li>
+        <li><strong>Documentation quality:</strong> Best when the model has good naming conventions. Poor names (REV01, TEMP, TEST) produce poor descriptions.</li>
+        <li><strong>Manual enrichment benchmark:</strong> A 50-module model would take 1–2 weeks of manual documentation. CoModeler produces a first draft in 20–30 minutes. Quality gap: ~20–30% — requires human review and correction.</li>
+      </ul>
+
+      <h3>Lab 3A — Explore Agent Studio</h3>
+      <ul>
+        <li><strong>Common issue:</strong> Participant doesn't see Agent Studio in dropdown. Resolution: Tenant admin has not assigned the AI Admin role. Coordinate with Mackenzie/Paul.</li>
+        <li><strong>Expected finding:</strong> Pre-built analysts for Finance, WFP, SC, Sales. Each has 10–30 pre-configured line items with Anaplan-written semantic descriptions.</li>
+      </ul>
+
+      <h3>Lab 3B — Configure a Custom Analyst</h3>
+      <ul>
+        <li><strong>Most impactful change for answer quality:</strong> Improving the AI Context field. A vague context like "FP&amp;A model" produces worse results than "NovaTrend consumer goods FP&amp;A model covering regional and product-level revenue forecast and actuals for North America, EMEA, LATAM, and APAC."</li>
+        <li><strong>Out-of-scope response:</strong> Should say something like "I don't have access to that information" or "That question is outside my current scope." If it attempts to answer with made-up data, the semantic descriptions are too vague — tighten them.</li>
+        <li><strong>Visualization check:</strong> A time-series question (last 12 months) should auto-generate a line chart. If it produces just a number, the time dimension was not included in the configured line items.</li>
+      </ul>
+
+      <div class="prevnext-nav">
+      <a class="prevnext-prev" href="./09-qanda.html">&larr; Q&amp;A Reference</a>
+      <span></span>
+      </div>
+    </div>
+  </main>
+  <script src="./js/nav.js"></script>
+</body>
+</html>

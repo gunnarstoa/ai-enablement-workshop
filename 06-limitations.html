@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Limitations Quick Reference — AI Enablement Lab Guide</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <div class="mobile-header">
+    <button id="hamburger">☰</button>
+    <span>AI Enablement Lab Guide</span>
+  </div>
+
+  <nav class="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-title">AI Enablement</div>
+      <div class="sidebar-subtitle">Anaplan Partner Onboarding</div>
+    </div>
+    <ul class="nav-list">
+      <li class="nav-section-title">Getting Started</li>
+      <li><a class="nav-link" href="./index.html">Workshop Home</a></li>
+      <li><a class="nav-link" href="./01-overview.html">Workshop Overview</a></li>
+      <li><a class="nav-link" href="./02-case-study.html">Case Study: NovaTrend</a></li>
+      <li class="nav-section-title">CoModeler</li>
+      <li><a class="nav-link" href="./03-comodeler.html">CoModeler Deep-Dive + Labs</a></li>
+      <li class="nav-section-title">Agent Studio</li>
+      <li><a class="nav-link" href="./04-agent-studio.html">Agent Studio + Custom Analyst</a></li>
+      <li class="nav-section-title">Pre-Sales</li>
+      <li><a class="nav-link" href="./05-presales-demo.html">Pre-Sales Demo Playbook</a></li>
+      <li class="nav-section-title">Reference</li>
+      <li><a class="nav-link active" href="./06-limitations.html">Limitations Quick Reference</a></li>
+      <li><a class="nav-link" href="./07-roadmap.html">Roadmap Snapshot (Apr 2026)</a></li>
+      <li><a class="nav-link" href="./08-partner-enablement.html">Partner Enablement</a></li>
+      <li><a class="nav-link" href="./09-qanda.html">Q&amp;A from Session</a></li>
+      <li><a class="nav-link" href="./10-facilitator.html">Facilitator Guide</a></li>
+    </ul>
+  </nav>
+
+  <main class="main-content">
+    <div class="content-header">
+      <h1>Limitations &amp; Gotchas — Quick Reference</h1>
+      <p class="subtitle">CoModeler, Custom Analyst, Agent Studio limits as of April 2, 2026</p>
+      <div class="badge-row">
+        <span class="content-badge">Reference Card</span>
+        <span class="content-badge">Limitations</span>
+        <span class="content-badge">April 2026</span>
+      </div>
+    </div>
+    <div class="content-body">
+
+      <p>Quick-reference card for customer conversations. Keep this page open during calls. Last updated: <strong>April 2, 2026</strong> (Leo Nunes onboarding session).</p>
+
+      <div class="callout-important">
+        <span class="callout-label">📌 Freeze Date</span>
+        <p>This page reflects the GA state as of April 2, 2026. Do not extrapolate to roadmap items without checking the Roadmap Snapshot page.</p>
+      </div>
+
+      <h2>CoModeler Limitations</h2>
+            <div class="table-wrap">
+        <table>
+          <thead><tr><th>Limitation</th><th>Detail</th><th>Workaround</th></tr></thead>
+          <tbody>
+        <tr><td>Deployed models only — blocked</td><td>CoModeler only works on standard (non-deployed) models.</td><td>Confirm model status before demo or workshop.</td></tr>
+        <tr><td>No UX capabilities</td><td>Cannot build, modify, or view pages, dashboards, or grids.</td><td>Manual UX work required after model build.</td></tr>
+        <tr><td>No ALM</td><td>Cannot push changes through Application Lifecycle Management.</td><td>ALM pipeline remains fully manual.</td></tr>
+        <tr><td>No user / tenant management</td><td>Completely out of scope.</td><td>N/A</td></tr>
+        <tr><td>No calendar / time range changes</td><td>Cannot modify time settings on a model.</td><td>Manual change required in model settings.</td></tr>
+        <tr><td>Cannot execute data imports</td><td>Can set up the import action; cannot run it.</td><td>Trigger import manually after CoModeler sets it up.</td></tr>
+        <tr><td>No bulk copy actions</td><td>Cannot create or manage action sets.</td><td>Manual action creation.</td></tr>
+        <tr><td>Poor at counting / math in context</td><td>Unreliable for aggregation questions within the chat.</td><td>Run calculations in the model directly.</td></tr>
+        <tr><td>No cross-session memory</td><td>Conversation history is not saved. Each session starts fresh.</td><td>Save prompts externally. Download conversation transcripts.</td></tr>
+        <tr><td>Context window ~5 interactions</td><td>Beyond ~5 follow-ups, CoModeler loses earlier context.</td><td>Start a new conversation for new tasks.</td></tr>
+        <tr><td>Cannot distinguish app types</td><td>Does not know if a model is Polaris, classic, or custom-built.</td><td>Tell it explicitly in your prompt.</td></tr>
+        <tr><td>CSV upload only (today)</td><td>File upload is CSV only — no Excel, no JSON.</td><td>Convert to CSV before uploading a spec file.</td></tr>
+        <tr><td>No Model Optimizer (yet)</td><td>Can suggest formula improvements; cannot apply them.</td><td>Apply suggestions manually. Roadmap: H2 2026.</td></tr>
+        <tr><td>LLM: ChatGPT 4.0</td><td>Current model. Claude upgrade targeted H2 2026.</td><td>No action needed; reconfiguration not expected.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Custom Analyst Limitations</h2>
+            <div class="table-wrap">
+        <table>
+          <thead><tr><th>Limitation</th><th>Detail</th><th>Workaround</th></tr></thead>
+          <tbody>
+        <tr><td>Scope is configuration-bound</td><td>Only answers questions about modules/line items you explicitly configured.</td><td>Design the configuration scope carefully with the business users.</td></tr>
+        <tr><td>No cross-analyst queries</td><td>Analysts cannot call each other or share context.</td><td>Configure a broader single analyst if cross-domain queries are needed.</td></tr>
+        <tr><td>Context window ~5 interactions</td><td>Conversation context degrades after ~5 follow-ups.</td><td>Start a new conversation for each distinct question thread.</td></tr>
+        <tr><td>No conversation history saved</td><td>Sessions do not persist.</td><td>Users must re-ask questions each session.</td></tr>
+        <tr><td>Visualizations not configurable</td><td>Chart type is auto-selected (time → line, rank → bar). Cannot override.</td><td>Accept auto-visualization or export to custom charts.</td></tr>
+        <tr><td>No external API access</td><td>Cannot be embedded in external applications or triggered programmatically.</td><td>Roadmap item.</td></tr>
+        <tr><td>Semantic quality = answer quality</td><td>Poor line item descriptions produce poor answers.</td><td>Invest in good semantic descriptions. Use CoModeler + ChatGPT enrichment workflow.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Agent Studio Limitations</h2>
+            <div class="table-wrap">
+        <table>
+          <thead><tr><th>Limitation</th><th>Detail</th></tr></thead>
+          <tbody>
+        <tr><td>Workspace-level CoModeler control only</td><td>Cannot enable CoModeler at user level — it's all users in an enabled workspace.</td></tr>
+        <tr><td>No external agent import (yet)</td><td>Cannot bring third-party agents into Agent Studio. Roadmap.</td></tr>
+        <tr><td>Agents do not communicate</td><td>Finance Analyst, Sales Analyst, CoModeler — no cross-agent queries or handoffs.</td></tr>
+        <tr><td>No workflow agents (yet)</td><td>Future agents will handle 'why is my revenue low?' type workflow questions. Not yet GA.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="prevnext-nav">
+      <a class="prevnext-prev" href="./05-presales-demo.html">&larr; Pre-Sales Playbook</a>
+      <a class="prevnext-next" href="./07-roadmap.html">Roadmap Snapshot &rarr;</a>
+      </div>
+    </div>
+  </main>
+  <script src="./js/nav.js"></script>
+</body>
+</html>

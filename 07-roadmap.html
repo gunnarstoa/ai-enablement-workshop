@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Roadmap Snapshot — AI Enablement Lab Guide</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <div class="mobile-header">
+    <button id="hamburger">☰</button>
+    <span>AI Enablement Lab Guide</span>
+  </div>
+
+  <nav class="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-title">AI Enablement</div>
+      <div class="sidebar-subtitle">Anaplan Partner Onboarding</div>
+    </div>
+    <ul class="nav-list">
+      <li class="nav-section-title">Getting Started</li>
+      <li><a class="nav-link" href="./index.html">Workshop Home</a></li>
+      <li><a class="nav-link" href="./01-overview.html">Workshop Overview</a></li>
+      <li><a class="nav-link" href="./02-case-study.html">Case Study: NovaTrend</a></li>
+      <li class="nav-section-title">CoModeler</li>
+      <li><a class="nav-link" href="./03-comodeler.html">CoModeler Deep-Dive + Labs</a></li>
+      <li class="nav-section-title">Agent Studio</li>
+      <li><a class="nav-link" href="./04-agent-studio.html">Agent Studio + Custom Analyst</a></li>
+      <li class="nav-section-title">Pre-Sales</li>
+      <li><a class="nav-link" href="./05-presales-demo.html">Pre-Sales Demo Playbook</a></li>
+      <li class="nav-section-title">Reference</li>
+      <li><a class="nav-link" href="./06-limitations.html">Limitations Quick Reference</a></li>
+      <li><a class="nav-link active" href="./07-roadmap.html">Roadmap Snapshot (Apr 2026)</a></li>
+      <li><a class="nav-link" href="./08-partner-enablement.html">Partner Enablement</a></li>
+      <li><a class="nav-link" href="./09-qanda.html">Q&amp;A from Session</a></li>
+      <li><a class="nav-link" href="./10-facilitator.html">Facilitator Guide</a></li>
+    </ul>
+  </nav>
+
+  <main class="main-content">
+    <div class="content-header">
+      <h1>Roadmap Snapshot — April 2, 2026</h1>
+      <p class="subtitle">GA today vs H2 2026 roadmap — frozen for partner reference</p>
+      <div class="badge-row">
+        <span class="content-badge">Roadmap</span>
+        <span class="content-badge">Reference Card</span>
+        <span class="content-badge">April 2026</span>
+      </div>
+    </div>
+    <div class="content-body">
+
+      <p>Frozen as of <strong>April 2, 2026</strong> — Leo Nunes onboarding session. Use this table to anchor customer conversations without over-promising. When in doubt, use the words "targeted" and "H2 2026" rather than specific dates.</p>
+
+      <div class="callout-warning">
+        <span class="callout-label">⚠️ Anaplan Date Convention</span>
+        <p>"H2 2026" in Anaplan roadmap language should be treated as a range of Q3 2026 through January 2027. As Leo said on the call: "H2 2026 in Anaplan means 31st of December, which might as well be January 31st." Plan accordingly and do not commit customers to specific dates.</p>
+      </div>
+
+      <h2>GA Today (April 2026)</h2>
+            <div class="table-wrap">
+        <table>
+          <thead><tr><th>Product / Feature</th><th>Description</th><th>Notes</th></tr></thead>
+          <tbody>
+        <tr><td>CoModeler</td><td>AI model-building assistant inside Anaplan models</td><td>Based on ChatGPT 4.0. GA.</td></tr>
+        <tr><td>Agent Studio</td><td>Admin control plane for all AI products</td><td>Tenant-level management. GA.</td></tr>
+        <tr><td>Custom Analyst</td><td>Configurable conversational AI for end users</td><td>GA. Requires AI Admin config.</td></tr>
+        <tr><td>Anaplan Analysts (Finance, WFP, SC, Sales)</td><td>Pre-built function-specific analysts</td><td>GA. Pre-configured by Anaplan.</td></tr>
+        <tr><td>Forecaster (PlanIQ)</td><td>Statistical forecasting engine</td><td>GA. Been available since 2019.</td></tr>
+        <tr><td>Optimizer</td><td>ML-based optimization solver</td><td>GA since 2018.</td></tr>
+        <tr><td>Syrup (Supply Chain Demand Planning)</td><td>Demand planning for Apparel — baked into SC apps</td><td>GA via acquisition.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>H2 2026 Roadmap (Targeted — Not Committed)</h2>
+            <div class="table-wrap">
+        <table>
+          <thead><tr><th>Feature</th><th>Product</th><th>What It Does</th><th>Current State</th></tr></thead>
+          <tbody>
+        <tr><td>LLM Upgrade: ChatGPT 4.0 → Claude</td><td>CoModeler</td><td>Smarter base model, better app-type awareness, new training data ingestion</td><td>Targeted H2 2026</td></tr>
+        <tr><td>Persistent Prompt Notepad</td><td>CoModeler</td><td>Save and reuse prompts inside CoModeler — no more external prompt libraries</td><td>Roadmap</td></tr>
+        <tr><td>Model Optimizer</td><td>CoModeler</td><td>Suggest AND apply formula improvements automatically</td><td>Roadmap — currently suggest only</td></tr>
+        <tr><td>LLM change (OpenAI → Claude?)</td><td>Custom Analyst</td><td>Possible, unconfirmed. If it happens, no reconfiguration expected.</td><td>Unconfirmed — Leo flagged uncertainty</td></tr>
+        <tr><td>Anomaly Detector</td><td>ADO / Agent Studio</td><td>Automatic detection of data quality and anomaly issues</td><td>Roadmap</td></tr>
+        <tr><td>Data Quality Agent</td><td>ADO / Agent Studio</td><td>Proactive data health monitoring</td><td>Roadmap</td></tr>
+        <tr><td>Workflow Agents</td><td>Agent Studio</td><td>Answer questions like 'why is my revenue low?' and trigger workflows</td><td>Roadmap — not GA</td></tr>
+        <tr><td>Cross-agent communication</td><td>Agent Studio</td><td>Finance Analyst can query Sales Analyst, etc.</td><td>Roadmap — agents currently isolated</td></tr>
+        <tr><td>External agent import</td><td>Agent Studio</td><td>Bring third-party LLM agents into the Agent Studio ecosystem</td><td>Roadmap</td></tr>
+        <tr><td>ML APIs (bring-your-own model)</td><td>Forecaster</td><td>Plug custom ML models into Forecaster and other Anaplan apps</td><td>Roadmap — not released</td></tr>
+        <tr><td>CoModeler file type expansion</td><td>CoModeler</td><td>Support Excel, JSON beyond CSV for spec file uploads</td><td>Roadmap</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>How to Use This With Customers</h2>
+      <ul>
+        <li><strong>Do:</strong> Share the "GA Today" table confidently. Everything in that table is shipped and available.</li>
+        <li><strong>Do:</strong> Reference "H2 2026" items as things on the roadmap Anaplan has announced publicly.</li>
+        <li><strong>Don't:</strong> Promise specific dates. Use "targeted" or "on the roadmap for second half of 2026."</li>
+        <li><strong>Don't:</strong> Present roadmap items in demos as if they're available today. Leo flagged that internal Anaplan decks sometimes incorrectly mark roadmap features as Phase 1.</li>
+        <li><strong>Do:</strong> Use the ML APIs note specifically — if a customer asks about bring-your-own model, the answer is "roadmap only, not yet GA as of April 2026."</li>
+      </ul>
+
+      <div class="prevnext-nav">
+      <a class="prevnext-prev" href="./06-limitations.html">&larr; Limitations Reference</a>
+      <a class="prevnext-next" href="./08-partner-enablement.html">Partner Enablement &rarr;</a>
+      </div>
+    </div>
+  </main>
+  <script src="./js/nav.js"></script>
+</body>
+</html>

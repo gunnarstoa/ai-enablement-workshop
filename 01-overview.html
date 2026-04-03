@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Workshop Overview — AI Enablement Lab Guide</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <div class="mobile-header">
+    <button id="hamburger">☰</button>
+    <span>AI Enablement Lab Guide</span>
+  </div>
+
+  <nav class="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-title">AI Enablement</div>
+      <div class="sidebar-subtitle">Anaplan Partner Onboarding</div>
+    </div>
+    <ul class="nav-list">
+      <li class="nav-section-title">Getting Started</li>
+      <li><a class="nav-link" href="./index.html">Workshop Home</a></li>
+      <li><a class="nav-link active" href="./01-overview.html">Workshop Overview</a></li>
+      <li><a class="nav-link" href="./02-case-study.html">Case Study: NovaTrend</a></li>
+      <li class="nav-section-title">CoModeler</li>
+      <li><a class="nav-link" href="./03-comodeler.html">CoModeler Deep-Dive + Labs</a></li>
+      <li class="nav-section-title">Agent Studio</li>
+      <li><a class="nav-link" href="./04-agent-studio.html">Agent Studio + Custom Analyst</a></li>
+      <li class="nav-section-title">Pre-Sales</li>
+      <li><a class="nav-link" href="./05-presales-demo.html">Pre-Sales Demo Playbook</a></li>
+      <li class="nav-section-title">Reference</li>
+      <li><a class="nav-link" href="./06-limitations.html">Limitations Quick Reference</a></li>
+      <li><a class="nav-link" href="./07-roadmap.html">Roadmap Snapshot (Apr 2026)</a></li>
+      <li><a class="nav-link" href="./08-partner-enablement.html">Partner Enablement</a></li>
+      <li><a class="nav-link" href="./09-qanda.html">Q&amp;A from Session</a></li>
+      <li><a class="nav-link" href="./10-facilitator.html">Facilitator Guide</a></li>
+    </ul>
+  </nav>
+
+  <main class="main-content">
+    <div class="content-header">
+      <h1>Workshop Overview</h1>
+      <p class="subtitle">Anaplan AI journey, GA vs roadmap, token usage, learning path</p>
+      <div class="badge-row">
+        <span class="content-badge">Overview</span>
+        <span class="content-badge">AI Journey</span>
+        <span class="content-badge">April 2026</span>
+      </div>
+    </div>
+    <div class="content-body">
+
+      <h2>Anaplan's AI Journey</h2>
+      <p>Anaplan has been building toward connected, intelligent planning since 2018. Leo Nunes walked the partner cohort through the full timeline in the April 2, 2026 kickoff. Here is the arc:</p>
+
+      <div class="screenshot-wrap">
+        <img src="./img/ss-0120.jpg" alt="Anaplan AI Evolution — roadmap from 2019 to Agent Studio" class="screenshot">
+        <p class="screenshot-caption">Anaplan AI evolution slide from Leo's April 2, 2026 session — Phase I through Agent Studio</p>
+      </div>
+
+
+      <div class="step">
+        <div class="step-badge">2018</div>
+        <div class="step-content"><strong>Anaplan Optimizer</strong> — First ML-type problem solver. GA since 2018. Still available.</div>
+      </div>
+      <div class="step">
+        <div class="step-badge">2019</div>
+        <div class="step-content"><strong>PlanIQ</strong> — Predecessor to Forecaster. Statistical forecasting engine. Now part of Forecaster.</div>
+      </div>
+      <div class="step">
+        <div class="step-badge">2023</div>
+        <div class="step-content"><strong>Syrup acquisition</strong> — Demand planning engine for Apparel, now baked into Supply Chain applications.</div>
+      </div>
+      <div class="step">
+        <div class="step-badge">Late 2024</div>
+        <div class="step-content"><strong>CoPlanet</strong> — First conversational AI tool for AFP and Demand Planning. Standalone product, now evolved into Finance Analysts.</div>
+      </div>
+      <div class="step">
+        <div class="step-badge">2025</div>
+        <div class="step-content"><strong>Finance Analysts + CoModeler GA</strong> — Built-in intelligence, role-based. Agent Studio released as admin layer.</div>
+      </div>
+      <div class="step">
+        <div class="step-badge">H2 2026</div>
+        <div class="step-content"><strong>LLM upgrade (ChatGPT 4.0 → Claude), Anomaly Detector, Model Optimizer, Workflow Agents</strong> — Roadmap items, not yet GA.</div>
+      </div>
+
+      <div class="callout-note">
+        <span class="callout-label">📝 Important</span>
+        <p>The <strong>Anaplan Machine Learning APIs</strong> (bring-your-own model) are <em>roadmap only</em> as of April 2026. Leo flagged this explicitly — the slide in the onboarding deck incorrectly marks it as "Phase 1" rather than roadmap. Do not promise this to customers.</p>
+      </div>
+
+      <h2>GA Products — What You Can Sell and Deliver Today</h2>
+            <div class="table-wrap">
+        <table>
+          <thead><tr><th>Product</th><th>What It Is</th><th>Who Uses It</th><th>Status</th></tr></thead>
+          <tbody>
+        <tr><td>CoModeler</td><td>AI model-building assistant — creates, extends, documents, and checks health of Anaplan models</td><td>Model builders, TCs, SAs</td><td>✅ GA</td></tr>
+        <tr><td>Agent Studio</td><td>Admin control plane for all Anaplan AI — configure analysts, control workspace access</td><td>Tenant admins, AI admins</td><td>✅ GA</td></tr>
+        <tr><td>Custom Analyst</td><td>Configurable conversational AI for end users — natural language queries against Anaplan data</td><td>End users, business users</td><td>✅ GA</td></tr>
+        <tr><td>Anaplan Analysts (Finance, WFP, SC, Sales)</td><td>Pre-built analysts for specific functions</td><td>End users in respective domains</td><td>✅ GA</td></tr>
+        <tr><td>Forecaster (PlanIQ)</td><td>Statistical forecasting engine</td><td>Supply chain, FP&A</td><td>✅ GA</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Token Usage</h2>
+      <p>As of April 2026, Leo confirmed that <strong>tokens are not being counted</strong> for partner tenants. The product team is not billing or throttling partner usage. This is the right time to experiment extensively.</p>
+
+      <div class="callout-tip">
+        <span class="callout-label">💡 Tip</span>
+        <p>Use this window to run all three CoModeler labs, build at least one Custom Analyst configuration, and export documentation from a real model. Build your prompt library now while there are no token constraints.</p>
+      </div>
+
+      <h2>Learning Path</h2>
+      <p>This workshop is structured as a self-contained enablement path. Follow the modules in order for the first pass. After that, use the reference pages (Limitations, Roadmap, Q&amp;A) as standing references during customer engagements.</p>
+
+      <div class="step">
+        <div class="step-badge">1</div>
+        <div class="step-content"><strong>Workshop Overview</strong> (this page) — Understand the AI landscape and what's GA vs. roadmap.</div>
+      </div>
+      <div class="step">
+        <div class="step-badge">2</div>
+        <div class="step-content"><strong>Case Study</strong> — Meet NovaTrend. All labs are grounded in this scenario.</div>
+      </div>
+      <div class="step">
+        <div class="step-badge">3</div>
+        <div class="step-content"><strong>CoModeler Deep-Dive + Labs 2A/2B/2C</strong> — 45–60 minutes. Core model-building AI.</div>
+      </div>
+      <div class="step">
+        <div class="step-badge">4</div>
+        <div class="step-content"><strong>Agent Studio + Custom Analyst + Labs 3A/3B</strong> — 30–40 minutes. Admin layer and end-user AI.</div>
+      </div>
+      <div class="step">
+        <div class="step-badge">5</div>
+        <div class="step-content"><strong>Pre-Sales Demo Playbook</strong> — Review before any prospect demo. Not a lab — a reference.</div>
+      </div>
+      <div class="step">
+        <div class="step-badge">6</div>
+        <div class="step-content"><strong>Reference Pages</strong> — Limitations, Roadmap, Q&amp;A. Keep these open during customer conversations.</div>
+      </div>
+
+      <div class="prevnext-nav">
+      <span></span>
+      <a class="prevnext-next" href="./02-case-study.html">Case Study &rarr;</a>
+      </div>
+    </div>
+  </main>
+  <script src="./js/nav.js"></script>
+</body>
+</html>

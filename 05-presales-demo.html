@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pre-Sales Demo Playbook — AI Enablement Lab Guide</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <div class="mobile-header">
+    <button id="hamburger">☰</button>
+    <span>AI Enablement Lab Guide</span>
+  </div>
+
+  <nav class="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-title">AI Enablement</div>
+      <div class="sidebar-subtitle">Anaplan Partner Onboarding</div>
+    </div>
+    <ul class="nav-list">
+      <li class="nav-section-title">Getting Started</li>
+      <li><a class="nav-link" href="./index.html">Workshop Home</a></li>
+      <li><a class="nav-link" href="./01-overview.html">Workshop Overview</a></li>
+      <li><a class="nav-link" href="./02-case-study.html">Case Study: NovaTrend</a></li>
+      <li class="nav-section-title">CoModeler</li>
+      <li><a class="nav-link" href="./03-comodeler.html">CoModeler Deep-Dive + Labs</a></li>
+      <li class="nav-section-title">Agent Studio</li>
+      <li><a class="nav-link" href="./04-agent-studio.html">Agent Studio + Custom Analyst</a></li>
+      <li class="nav-section-title">Pre-Sales</li>
+      <li><a class="nav-link active" href="./05-presales-demo.html">Pre-Sales Demo Playbook</a></li>
+      <li class="nav-section-title">Reference</li>
+      <li><a class="nav-link" href="./06-limitations.html">Limitations Quick Reference</a></li>
+      <li><a class="nav-link" href="./07-roadmap.html">Roadmap Snapshot (Apr 2026)</a></li>
+      <li><a class="nav-link" href="./08-partner-enablement.html">Partner Enablement</a></li>
+      <li><a class="nav-link" href="./09-qanda.html">Q&amp;A from Session</a></li>
+      <li><a class="nav-link" href="./10-facilitator.html">Facilitator Guide</a></li>
+    </ul>
+  </nav>
+
+  <main class="main-content">
+    <div class="content-header">
+      <h1>Pre-Sales Demo Playbook</h1>
+      <p class="subtitle">What to show, demo order, objections, limitations handling</p>
+      <div class="badge-row">
+        <span class="content-badge">Pre-Sales</span>
+        <span class="content-badge">Demo</span>
+        <span class="content-badge">Partner Reference</span>
+      </div>
+    </div>
+    <div class="content-body">
+
+      <p>This playbook is for partner SCs and SAs who need to demonstrate CoModeler and Custom Analyst to prospects. It is sourced from Leo Nunes' pre-sales session (recorded, available in the Seismic blueprint folder) and the April 2, 2026 onboarding session.</p>
+
+      <div class="callout-important">
+        <span class="callout-label">🎯 Golden Rule</span>
+        <p>Never demo a live AI system without having run through it completely the day before. AI output is non-deterministic — the response you got yesterday may not be the response you get tomorrow. Build a demo script. Know your fallback if a prompt produces an unexpected result.</p>
+      </div>
+
+      <h2>What to Show — CoModeler</h2>
+      <p>The highest-impact CoModeler demos for prospects are in this order:</p>
+
+      <div class="step">
+        <div class="step-badge">1</div>
+        <div class="step-content">
+          <strong>Documentation generation</strong> — This is the strongest wow moment. Pick a module with 15–20 line items. Ask CoModeler to generate a line item dictionary. Show the output populating in real-time. Then show the export. Say: "This used to take your model builder 2–3 days. This took 90 seconds."
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-badge">2</div>
+        <div class="step-content">
+          <strong>Bulk rename</strong> — Show renaming all line items in a module to a naming convention in a single prompt. Business value: "Your legacy models don't follow naming standards. CoModeler can standardize them in minutes, not days."
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-badge">3</div>
+        <div class="step-content">
+          <strong>Model health check</strong> — Show the health check output. Prospects love seeing issues identified automatically. Frame it as: "This is your audit assistant — finds what a human would miss."
+        </div>
+      </div>
+
+      <div class="callout-warning">
+        <span class="callout-label">⚠️ Do NOT Demo Live</span>
+        <p>Do not attempt to build a new model from scratch in a live demo. The time-to-response is unpredictable (3–10+ minutes for complex tasks) and the output quality varies. Use pre-recorded segments or a pre-built model that you can show results from.</p>
+      </div>
+
+      <h2>What to Show — Custom Analyst</h2>
+      <div class="step">
+        <div class="step-badge">1</div>
+        <div class="step-content">
+          <strong>Natural language query → number</strong> — Ask: "What is the forecast revenue for [Region] in [Month]?" Show the answer appear with a source link. Click the source link to show the data origin. This is the transparency differentiator.
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-badge">2</div>
+        <div class="step-content">
+          <strong>Time series visualization</strong> — Ask a question that spans months: "Show me forecast revenue for the past 12 months." The analyst auto-generates a line chart. No configuration needed — it just does it.
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-badge">3</div>
+        <div class="step-content">
+          <strong>Out-of-scope question handling</strong> — Ask a question that's outside the configured scope. Show the analyst saying "I can't answer that." This is a <em>feature</em>, not a failure. Say: "This is how we prevent hallucinations — the system is honest about what it doesn't know."
+        </div>
+      </div>
+
+      <h2>Demo Order</h2>
+      <p>Recommended sequence for a 20-minute AI demo:</p>
+      <ol>
+        <li>1 min — Context setting: "Anaplan AI as of today" (use the roadmap snapshot)</li>
+        <li>3 min — CoModeler: documentation generation demo</li>
+        <li>2 min — CoModeler: bulk rename or health check</li>
+        <li>3 min — Agent Studio: show the admin layer (30 seconds each: workspace config, Analysts list)</li>
+        <li>5 min — Custom Analyst: live query demo (3 questions, 1 out-of-scope)</li>
+        <li>3 min — "What's coming" (H2 2026 roadmap items)</li>
+        <li>3 min — Q&amp;A buffer</li>
+      </ol>
+
+      <h2>Anticipate These Questions</h2>
+            <div class="table-wrap">
+        <table>
+          <thead><tr><th>Question</th><th>Answer</th></tr></thead>
+          <tbody>
+        <tr><td>Can it fix bugs in our existing model?</td><td>Not directly. It can document and identify issues. For fixes, the pattern is: build a corrected version of the module alongside the original, validate, then replace.</td></tr>
+        <tr><td>Will it hallucinate?</td><td>CoModeler can make mistakes — always review output. Custom Analyst is designed not to hallucinate: if it can't answer, it says so. Show the out-of-scope demo.</td></tr>
+        <tr><td>Is our data secure?</td><td>Custom Analyst runs queries as the logged-in user — their security filters apply. CoModeler runs inside the model with model-level permissions. No data leaves Anaplan.</td></tr>
+        <tr><td>Does it work with our app (Polaris/classic)?</td><td>CoModeler works with both Polaris and classic models, but currently cannot distinguish between them without your guidance. Tell it which type it's working with.</td></tr>
+        <tr><td>When is the Claude upgrade?</td><td>Targeted H2 2026. No reconfiguration expected — the abstraction layer stays Anaplan-side.</td></tr>
+        <tr><td>Can it build a full application?</td><td>Building a full application end-to-end is out of scope. It excels at targeted tasks: modules, documentation, bulk edits. An application has too many dependencies and business decisions that require human judgment.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Handling "What Can't It Do?"</h2>
+      <p>This question will come up. Answer it directly — don't dodge it. Prospects respect honest limitation conversations more than evasion.</p>
+
+      <div class="callout-note">
+        <span class="callout-label">📋 Suggested Answer</span>
+        <p>"Great question — here's what it can't do today: it doesn't touch UX, workflows, or ALM. It can't import data — it can set up the import, but you hit run. It can't work on deployed models. For Custom Analyst, it's limited to the data sources you explicitly configure — it won't go looking through your whole tenant. And the context window is about five interactions per conversation. These are real constraints, and our team tracks the roadmap closely to know when each one changes."</p>
+      </div>
+
+      <div class="prevnext-nav">
+      <a class="prevnext-prev" href="./04-agent-studio.html">&larr; Agent Studio</a>
+      <a class="prevnext-next" href="./06-limitations.html">Limitations Reference &rarr;</a>
+      </div>
+    </div>
+  </main>
+  <script src="./js/nav.js"></script>
+</body>
+</html>
