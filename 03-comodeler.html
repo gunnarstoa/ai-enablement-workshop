@@ -49,14 +49,18 @@
       </div>
     </div>
     <div class="content-body">
+
+      <!-- ============================================================
+           TELL
+           ============================================================ -->
       <div class="tsd-banner">
         <div class="tsd-step tsd-step-tell">
           <div class="tsd-step-label">📖 Tell</div>
-          <div class="tsd-step-desc">Understand what CoModeler is, what it can and cannot do, and how to prompt it effectively.</div>
+          <div class="tsd-step-desc">What CoModeler is, what it can and cannot do, and how to prompt it effectively.</div>
         </div>
         <div class="tsd-step tsd-step-show">
           <div class="tsd-step-label">🖥️ Show</div>
-          <div class="tsd-step-desc">See CoModeler opened in an Anaplan model. Walk through the Agent Studio configuration for CoModeler access.</div>
+          <div class="tsd-step-desc">Live walkthrough: open CoModeler in a model, tour the interface, run a spec-file build, run documentation export.</div>
         </div>
         <div class="tsd-step tsd-step-do">
           <div class="tsd-step-label">🛠️ Do</div>
@@ -64,29 +68,42 @@
         </div>
       </div>
 
-      <div class="screenshot-wrap">
-        <img src="./img/ss-1080.jpg" alt="CoModeler Overview slide from Leo's session" class="screenshot">
-        <p class="screenshot-caption">CoModeler Overview — what it is, how it processes requests, key limitations (slide 21)</p>
-      </div>
-
       <h2>What CoModeler Is</h2>
       <p>CoModeler is Anaplan's AI-powered model-building assistant. Leo's definition from the session: <em>"A very junior model builder that knows a lot."</em> It has deep business context (trained on the internet), knows Anaplan well (fine-tuned on Anapedia and plan content), but requires supervision — especially on complex models.</p>
 
       <p>It lives <strong>inside a model</strong>. It cannot interact with anything outside the model: no tenant management, no user management, no UX, no ADO, no workflow.</p>
 
+      <div class="screenshot-wrap">
+        <img src="./img/ss-1080.jpg" alt="CoModeler Overview slide from Leo's session" class="screenshot">
+        <p class="screenshot-caption">CoModeler Overview — what it is, how it processes requests, key limitations (session slide 21)</p>
+      </div>
+
+      <h2>Who CoModeler Is For</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>User Type</th><th>Primary Value</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Expert model builders / SAs</strong></td><td>Productivity accelerator. Automates bulk repetitive tasks: rename conventions, bulk create, documentation at scale.</td></tr>
+            <tr><td><strong>Core model builders</strong></td><td>Intelligent assistant for daily work. Helps structure modules, suggests formulas, documents as you build.</td></tr>
+            <tr><td><strong>New builders / business SMEs</strong></td><td>Onboarding and enablement tool. "Where do I even start?" — ask CoModeler to propose the design, then review it.</td></tr>
+            <tr><td><strong>Application extenders</strong></td><td>Extend Polaris / OOB apps. Always tell it the application context explicitly so it follows the right conventions.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
       <h2>Capabilities</h2>
-            <div class="table-wrap">
+      <div class="table-wrap">
         <table>
           <thead><tr><th>Capability</th><th>Strength</th><th>Notes</th></tr></thead>
           <tbody>
-        <tr><td>Build new models from scratch</td><td>Strong</td><td>Can generate modules, lists, line items from a prompt or spec file. Not perfect — check output.</td></tr>
-        <tr><td>Bulk rename / bulk edit</td><td>Very strong</td><td>Experts love this. Rename all line items on a module, change naming conventions across a model.</td></tr>
-        <tr><td>Document a model</td><td>Strongest capability</td><td>Line item dictionaries, notes on line items, exportable documentation. Wow factor.</td></tr>
-        <tr><td>Model health check</td><td>Moderate</td><td>Identifies unused modules/line items, best-practice issues. Points you to problems; doesn't fix them.</td></tr>
-        <tr><td>Extend application models</td><td>Moderate (with guidance)</td><td>Works better when you provide context (e.g. 'this is a Polaris model — use Polaris best practices').</td></tr>
-        <tr><td>Formula optimization suggestions</td><td>Limited</td><td>Can suggest improvements but cannot make the change itself yet.</td></tr>
-        <tr><td>Data import setup</td><td>Partial</td><td>Can read a CSV, set up import action. Cannot execute the import.</td></tr>
-        <tr><td>Fix broken formulas</td><td>Weak</td><td>Better to build rev 02 of a module with corrections than ask it to fix rev 01.</td></tr>
+            <tr><td>Build new models from scratch</td><td>Strong</td><td>Can generate modules, lists, line items from a prompt or spec file. Not perfect — check output.</td></tr>
+            <tr><td>Bulk rename / bulk edit</td><td>Very strong</td><td>Experts love this. Rename all line items on a module, change naming conventions across a model.</td></tr>
+            <tr><td>Document a model</td><td>Strongest capability</td><td>Line item dictionaries, notes on line items, exportable documentation. Consistent wow factor in demos.</td></tr>
+            <tr><td>Model health check</td><td>Moderate</td><td>Identifies unused modules/line items, best-practice issues. Points you to problems; doesn't fix them.</td></tr>
+            <tr><td>Extend application models</td><td>Moderate (with guidance)</td><td>Works better when you provide context (e.g. "this is a Polaris model — use Polaris best practices").</td></tr>
+            <tr><td>Formula optimization suggestions</td><td>Limited</td><td>Can suggest improvements but cannot make the change itself yet.</td></tr>
+            <tr><td>Data import setup</td><td>Partial</td><td>Can read a CSV, set up import action. Cannot execute the import.</td></tr>
+            <tr><td>Fix broken formulas</td><td>Weak</td><td>Better to build rev 02 of a module with corrections than ask it to fix rev 01.</td></tr>
           </tbody>
         </table>
       </div>
@@ -96,22 +113,22 @@
         <p class="screenshot-caption">CoModeler capabilities matrix from Leo's session — green = supported, amber = out of scope, orange = known opportunities (slide 24)</p>
       </div>
 
-      <h2>Limitations Table</h2>
-            <div class="table-wrap">
+      <h2>Limitations</h2>
+      <div class="table-wrap">
         <table>
           <thead><tr><th>Cannot Do</th><th>Why It Matters</th></tr></thead>
           <tbody>
-        <tr><td>Work on deployed models</td><td>Standard model only. Always check model status before using CoModeler.</td></tr>
-        <tr><td>Classic dashboards</td><td>No UX work. Pages, grids, charts — all out of scope.</td></tr>
-        <tr><td>ALM (Application Lifecycle Management)</td><td>Cannot push changes through ALM pipeline.</td></tr>
-        <tr><td>User / tenant management</td><td>Completely out of scope. Anything outside the model.</td></tr>
-        <tr><td>Change calendar / time ranges</td><td>Time settings are immutable from CoModeler.</td></tr>
-        <tr><td>Import data (execute)</td><td>Can set up the import action; cannot run it.</td></tr>
-        <tr><td>Bulk copy actions</td><td>Cannot create or manage action sets.</td></tr>
-        <tr><td>Count cells / sum values</td><td>Poor at math/aggregation within conversations.</td></tr>
-        <tr><td>Read conversation history</td><td>No memory across sessions. Start fresh each time.</td></tr>
-        <tr><td>Interact with other AI products</td><td>CoModeler and Custom Analyst do not communicate.</td></tr>
-        <tr><td>Work across multiple models simultaneously</td><td>One model, one context window.</td></tr>
+            <tr><td>Work on deployed models</td><td>Standard model only. Always check model status before using CoModeler.</td></tr>
+            <tr><td>Classic dashboards</td><td>No UX work. Pages, grids, charts — all out of scope.</td></tr>
+            <tr><td>ALM (Application Lifecycle Management)</td><td>Cannot push changes through ALM pipeline.</td></tr>
+            <tr><td>User / tenant management</td><td>Completely out of scope. Anything outside the model.</td></tr>
+            <tr><td>Change calendar / time ranges</td><td>Time settings are immutable from CoModeler.</td></tr>
+            <tr><td>Import data (execute)</td><td>Can set up the import action; cannot run it.</td></tr>
+            <tr><td>Bulk copy actions</td><td>Cannot create or manage action sets.</td></tr>
+            <tr><td>Count cells / sum values</td><td>Poor at math/aggregation within conversations.</td></tr>
+            <tr><td>Read conversation history</td><td>No memory across sessions. Start fresh each time.</td></tr>
+            <tr><td>Interact with other AI products</td><td>CoModeler and Custom Analyst do not communicate.</td></tr>
+            <tr><td>Work across multiple models simultaneously</td><td>One model, one context window.</td></tr>
           </tbody>
         </table>
       </div>
@@ -122,16 +139,16 @@
       </div>
 
       <h2>Prompting Best Practices</h2>
-      <p>CoModeler is not chatty like ChatGPT. It thrives on precision, not conversation. Here is what works:</p>
+      <p>CoModeler is not chatty like ChatGPT. It thrives on precision, not conversation.</p>
 
-      <h3>Be Specific</h3>
+      <h3>Be Specific and Actionable</h3>
       <ul>
         <li><strong>Weak:</strong> "I need help with my budget model"</li>
         <li><strong>Strong:</strong> "In module REV-01, create 5 new line items: [names], all summing parent SUM-REV, formatted as currency, two decimals"</li>
       </ul>
 
       <h3>Use the Spec File Pattern</h3>
-      <p>A spec file is a CSV that describes what you want built. Think of it as typing out your requirements in a structured format before asking CoModeler to execute. Columns typically include: module name, list dimensions, line item names, format, formula skeleton.</p>
+      <p>A spec file is a CSV that describes what you want built — your requirements in a structured format before asking CoModeler to execute. Columns typically include: module name, list dimensions, line item names, format, formula skeleton.</p>
 
       <div class="callout-tip">
         <span class="callout-label">💡 Spec File Tip</span>
@@ -139,7 +156,7 @@
       </div>
 
       <h3>Context Injection (for Application Models)</h3>
-      <p>CoModeler cannot currently distinguish between a Polaris app model and a custom-built model. When working on application extensions, explicitly tell it:</p>
+      <p>CoModeler cannot distinguish a Polaris app model from a custom-built model. When working on application extensions, explicitly tell it:</p>
       <ul>
         <li>"This is an Anaplan Polaris model — please follow Polaris best practices"</li>
         <li>"This model uses the [app name] naming convention: [describe it]"</li>
@@ -148,7 +165,7 @@
       <h3>Parallel Tabs</h3>
       <p>Expert builders open multiple CoModeler tabs. While one is "thinking" (can take 3–5 minutes for large tasks), they work in another module via a second tab. Treat it like co-authoring with a colleague.</p>
 
-      <h3>Context Window — 5 Interactions</h3>
+      <h3>Context Window — ~5 Interactions</h3>
       <p>Keep conversations to ~5 interactions. Beyond that, CoModeler loses earlier context. If a conversation goes sideways or hallucinates, start a new one — there is no recovering from a hallucination loop within the same conversation.</p>
 
       <h2>Prompt Library</h2>
@@ -182,9 +199,58 @@
         <li>Model Optimizer capability (suggest and apply formula improvements)</li>
       </ul>
 
+      <!-- ============================================================
+           SHOW
+           ============================================================ -->
       <hr>
-      <h2>Lab 2A — First Conversation</h2>
-            <div class="mini-lab">
+      <h2 id="show">🖥️ Show — CoModeler Live Walkthrough</h2>
+      <p>This section walks through what participants will see on screen during the facilitated demo. Every screen they encounter in the labs appears here first so they know where to look and what to expect.</p>
+
+      <h3>Show 1: Opening CoModeler in a Model</h3>
+      <p>CoModeler lives inside a model — accessed via the left navigation panel. You'll see it listed alongside Contents, Modules, Lists, etc. Click it to open the chat panel on the right side of the screen.</p>
+
+      <div class="screenshot-wrap">
+        <img src="./img/lab-2a.jpg" alt="CoModeler interface open inside an Anaplan model — Welcome screen with capabilities list and chat input" class="screenshot">
+        <p class="screenshot-caption">CoModeler open inside the PSM Polaris Enablement model. Left nav shows CoModeler selected; right panel shows the welcome screen with capability categories and the chat input field at the bottom.</p>
+      </div>
+
+      <div class="callout-note">
+        <span class="callout-label">📝 What to point out</span>
+        <p>The welcome screen lists CoModeler's six capability areas: Discover model structure, Design/redesign structures, Build/update calculations, Manage data flows, Govern/document changes, and Limitations. The disclaimer at the bottom — "Anaplan AI can make mistakes. Check results." — is not optional fine print: it is the working principle for everything in these labs.</p>
+      </div>
+
+      <h3>Show 2: The Spec File</h3>
+      <p>For Lab 2B, participants will create and upload a spec file. Show them what a well-formed spec file looks like. Leo's example is a NovaTrend-style P&amp;L model with modules, dimensions (Versions, Time, Cities, Departments, Products), and line items.</p>
+
+      <div class="screenshot-wrap">
+        <img src="./img/lab-2b.jpg" alt="Excel spec file showing module-dimension matrix and line item definitions for a P&amp;L model" class="screenshot">
+        <p class="screenshot-caption">Example spec file open in Excel/SharePoint. Top section: ModulesListsMatrix showing which dimensions apply to each module. Bottom section: detailed line item definitions per module with names, formats, and relationships. This is the input participants will create for Lab 2B.</p>
+      </div>
+
+      <div class="callout-tip">
+        <span class="callout-label">💡 Facilitator Tip</span>
+        <p>Point out the structure: modules as rows in the matrix, dimensions as columns. The line items section below maps back to each module. CoModeler reads both sections when you upload this file. The more precise your spec, the less correction you'll need post-build.</p>
+      </div>
+
+      <h3>Show 3: CoModeler Output — Planning Response</h3>
+      <p>After submitting a build or documentation prompt, CoModeler returns a structured response in the chat. For a documentation or planning request, it generates a multi-section response covering module structure, data flows, and best-practice considerations — with a Download button to export the full conversation.</p>
+
+      <div class="screenshot-wrap">
+        <img src="./img/lab-2c.jpg" alt="CoModeler chat showing structured planning output with module descriptions, DISCO methodology, and a Download conversation history button" class="screenshot">
+        <p class="screenshot-caption">CoModeler output for a demand planning model documentation request. The response covers baseline forecast modules, calculation modules, output modules (DISCO methodology), workflow and approvals, and performance considerations. The "Download conversation history" button at the top right is used in Lab 2C.</p>
+      </div>
+
+      <div class="callout-note">
+        <span class="callout-label">📝 What to point out</span>
+        <p>The "Download conversation history" button exports the full conversation as a file. This is the output participants will review in Lab 2C. Point out the disclaimer at the bottom: CoModeler may suggest things that don't exist yet in the model or that don't apply — always validate the output before handing it to a client.</p>
+      </div>
+
+      <!-- ============================================================
+           DO — Lab 2A
+           ============================================================ -->
+      <hr>
+      <h2>Lab 2A — First Conversation with CoModeler</h2>
+      <div class="mini-lab">
         <div class="mini-lab-header">
           <div class="mini-lab-number">2A</div>
           <div class="mini-lab-title">First Conversation with CoModeler</div>
@@ -192,29 +258,48 @@
         </div>
         <div class="mini-lab-body">
           <p><strong>Objective:</strong> Open CoModeler in a real model and produce a line item dictionary for one module.</p>
+
+          <h4>Before You Start</h4>
+          <ul>
+            <li>You need access to an Anaplan model — must be a <strong>standard (non-deployed) model</strong>.</li>
+            <li>CoModeler must be enabled for your workspace. If you don't see it in the left nav, see Step 3 below.</li>
+          </ul>
+
           <h4>Steps</h4>
           <ol>
-          <li>Open your Anaplan model (must be a standard, non-deployed model).</li>
-          <li>Click the CoModeler icon in the top toolbar.</li>
-          <li>If you don't see it, confirm your tenant admin has enabled CoModeler for your workspace via Agent Studio.</li>
-          <li>Type this prompt: "What is this model about? List the modules you can see and describe the purpose of each in one sentence."</li>
-          <li>Review the response. Note: CoModeler is reading the model structure in real-time.</li>
-          <li>Follow up: "Generate a line item dictionary for the module with the most line items. Include: name, format, dimensions, and a plain English description."</li>
-          <li>Download the response (use the download icon in the chat).</li>
-          <li>Save the output — you will use it in Lab 3B.</li>
+            <li>Log in to Anaplan and open your model.</li>
+            <li>In the <strong>left navigation panel</strong>, scroll down to find <strong>CoModeler</strong> and click it. The CoModeler chat panel opens on the right.</li>
+            <li>If CoModeler is not visible: your tenant admin needs to enable it for your workspace via Agent Studio → CoModeler tab → Add workspace. (See Lab 3A.)</li>
+            <li>You should see the welcome screen: "Hi, I'm Anaplan CoModeler. I'm here to help you build your models."</li>
+            <li>Click <strong>NEW CONVERSATION</strong>.</li>
+            <li>In the chat input at the bottom, type:<br>
+              <code>"What is this model about? List the modules you can see and describe the purpose of each in one sentence."</code></li>
+            <li>Wait for the response. CoModeler is reading the model structure in real-time — this may take 1–3 minutes on a larger model.</li>
+            <li>Review the output. Then type a follow-up prompt:<br>
+              <code>"Generate a line item dictionary for the module with the most line items. Include: name, format, dimensions, and a plain English description of what it represents in a planning model."</code></li>
+            <li>When the response appears, click the <strong>Download conversation history</strong> button (top right of the chat panel). Save the file — you will use this in Lab 3B.</li>
           </ol>
-          <h4>Debrief</h4>
+
+          <div class="screenshot-wrap">
+            <img src="./img/lab-2a.jpg" alt="CoModeler left navigation and welcome screen — where to click to open CoModeler" class="screenshot">
+            <p class="screenshot-caption">Step 2: CoModeler in the left navigation (highlighted). The welcome panel appears on the right — click NEW CONVERSATION to begin.</p>
+          </div>
+
+          <h4>Debrief Questions</h4>
           <ul>
-          <li>How long did CoModeler take to respond to each prompt?</li>
-          <li>Did the line item descriptions make sense for the business context? Did any seem hallucinated?</li>
-          <li>What module did it identify as the most complex? Does that match your expectation?</li>
+            <li>How long did CoModeler take to respond to each prompt?</li>
+            <li>Did the line item descriptions make sense for the business context? Did any seem hallucinated?</li>
+            <li>What module did it identify as the most complex? Does that match your expectation?</li>
           </ul>
         </div>
       </div>
 
+      <!-- ============================================================
+           DO — Lab 2B
+           ============================================================ -->
       <hr>
       <h2>Lab 2B — Spec File Build</h2>
-            <div class="mini-lab">
+      <div class="mini-lab">
         <div class="mini-lab-header">
           <div class="mini-lab-number">2B</div>
           <div class="mini-lab-title">Build a Module Using a Spec File</div>
@@ -222,29 +307,52 @@
         </div>
         <div class="mini-lab-body">
           <p><strong>Objective:</strong> Create a CSV spec file for a simple NovaTrend revenue module and use CoModeler to build it.</p>
+
+          <h4>Before You Start</h4>
+          <p>You'll create a small spec file, then upload it to CoModeler. Refer to the Show section above to see what a well-formed spec looks like.</p>
+
           <h4>Steps</h4>
           <ol>
-          <li>Create a CSV file with columns: Module, Dimension1, Dimension2, LineItem, Format, Formula, Description.</li>
-          <li>Add 3–5 rows for a simple Revenue Actuals module. Use NovaTrend's regions as Dimension1, Products as Dimension2.</li>
-          <li>Save as <code>novatrend-revenue-spec.csv</code>.</li>
-          <li>In CoModeler, upload the CSV file.</li>
-          <li>Type this prompt: "Using the attached spec file, create the module and line items described. Apply standard Anaplan naming conventions. This is a consumer goods revenue model."</li>
-          <li>Approve each step as CoModeler presents it.</li>
-          <li>After creation, ask: "Add a description note to each line item you just created explaining its purpose."</li>
-          <li>Verify the module was created correctly in the model.</li>
+            <li>Open a spreadsheet (Excel, Google Sheets, or a text editor) and create a CSV file with these columns:<br>
+              <code>Module, Dimension1, Dimension2, LineItem, Format, Formula, Description</code></li>
+            <li>Add 3–5 rows for a simple <strong>NovaTrend Revenue Actuals</strong> module. Use:
+              <ul>
+                <li>Dimension1: NovaTrend Regions (e.g. North America, EMEA, APAC)</li>
+                <li>Dimension2: Products (e.g. Nutzo Bar, Cookie Crumbs, CooCoolicious)</li>
+                <li>LineItems: e.g. Revenue, Units Sold, Average Selling Price, Gross Margin</li>
+              </ul>
+            </li>
+            <li>Save as <code>novatrend-revenue-spec.csv</code>.</li>
+            <li>In CoModeler, click <strong>NEW CONVERSATION</strong>.</li>
+            <li>Use the attachment icon in the chat input to <strong>upload your CSV file</strong>.</li>
+            <li>After attaching, type this prompt:<br>
+              <code>"Using the attached spec file, create the module and line items described. Apply standard Anaplan naming conventions. This is a consumer goods revenue model."</code></li>
+            <li>CoModeler will present a build plan. <strong>Review each step</strong> before approving — it will ask for approval before making changes.</li>
+            <li>Approve the steps. After it completes, ask:<br>
+              <code>"Add a description note to each line item you just created explaining its purpose in a consumer goods revenue planning context."</code></li>
+            <li>Go to the model (open a new browser tab if needed) and verify the module was created correctly.</li>
           </ol>
-          <h4>Debrief</h4>
+
+          <div class="screenshot-wrap">
+            <img src="./img/lab-2b.jpg" alt="Example CSV spec file — modules, dimensions, and line items defined in a structured format for upload to CoModeler" class="screenshot">
+            <p class="screenshot-caption">Steps 1–3: Your spec file should follow this structure. Top: a modules-dimensions matrix (which dimensions apply to each module). Bottom: line items per module with names, formats, and descriptions. CoModeler reads the full file before responding.</p>
+          </div>
+
+          <h4>Debrief Questions</h4>
           <ul>
-          <li>Did CoModeler follow the spec exactly? What did it get right or wrong?</li>
-          <li>How did the description notes compare to what you would have written manually?</li>
-          <li>What would you change in the spec file format to get better output?</li>
+            <li>Did CoModeler follow the spec exactly? What did it get right or wrong?</li>
+            <li>How did the description notes compare to what you would have written manually?</li>
+            <li>What would you change in the spec file format to get better output?</li>
           </ul>
         </div>
       </div>
 
+      <!-- ============================================================
+           DO — Lab 2C
+           ============================================================ -->
       <hr>
       <h2>Lab 2C — Documentation &amp; Model Health</h2>
-            <div class="mini-lab">
+      <div class="mini-lab">
         <div class="mini-lab-header">
           <div class="mini-lab-number">2C</div>
           <div class="mini-lab-title">Documentation Export and Model Health Check</div>
@@ -252,26 +360,42 @@
         </div>
         <div class="mini-lab-body">
           <p><strong>Objective:</strong> Use CoModeler to generate exportable model documentation and run a health check.</p>
+
           <h4>Steps</h4>
           <ol>
-          <li>In CoModeler, type: "Run a model health check. Identify any modules with no downstream references, unused line items, or orphaned lists. Present as a prioritized list."</li>
-          <li>Review the output. Note any issues flagged.</li>
-          <li>Next, type: "Generate documentation for this entire model. For each module, include: purpose, dimensions, key line items, and how it connects to other modules. Format for export."</li>
-          <li>Download the documentation export.</li>
-          <li>Open the exported file and review quality. This is what you would hand a new model builder joining the project.</li>
-          <li>Optional: Paste the documentation text into ChatGPT or Claude and ask it to enrich the descriptions. Compare the two versions.</li>
+            <li>In CoModeler, click <strong>NEW CONVERSATION</strong>.</li>
+            <li>Type this health check prompt:<br>
+              <code>"Run a model health check. Identify any modules with no downstream references, unused line items, or orphaned lists. Present as a prioritized list."</code></li>
+            <li>Review the output. Note any issues flagged. Some may be false positives — CoModeler does not always have full context about deliberate design choices.</li>
+            <li>Next, type:<br>
+              <code>"Generate documentation for this entire model. For each module, include: purpose, dimensions, key line items, and how it connects to other modules. Format for export."</code></li>
+            <li>When the response completes, click <strong>Download conversation history</strong> (top right of the chat panel).</li>
+            <li>Open the exported file and review quality. This is what you would hand a new model builder joining the project.</li>
+            <li><strong>Optional:</strong> Paste the documentation text into ChatGPT or Claude and ask it to enrich the descriptions for a non-technical business user. Compare the two versions.</li>
           </ol>
-          <h4>Debrief</h4>
+
+          <div class="screenshot-wrap">
+            <img src="./img/lab-2c.jpg" alt="CoModeler chat showing structured documentation output — module descriptions, methodology notes, and Download conversation history button" class="screenshot">
+            <p class="screenshot-caption">Steps 4–5: CoModeler generates a multi-section structured response covering module purposes, data flow, and methodology. The Download conversation history button (top right of chat panel) exports the full output. This exported file is the artifact you'll use in Lab 3B to seed the Custom Analyst configuration.</p>
+          </div>
+
+          <div class="callout-tip">
+            <span class="callout-label">💡 Pipeline to Lab 3B</span>
+            <p>Save the exported documentation. In Lab 3B you'll paste the line item descriptions into your Custom Analyst configuration as semantic definitions. The workflow: CoModeler generates raw descriptions → ChatGPT/Claude enriches them for business language → paste into Agent Studio. This is the workflow Leo demonstrated in the session.</p>
+          </div>
+
+          <h4>Debrief Questions</h4>
           <ul>
-          <li>What health issues did CoModeler find? Were they real issues or false positives?</li>
-          <li>How complete was the documentation? Would you trust it without a manual review?</li>
-          <li>How long would this documentation have taken to produce manually?</li>
+            <li>What health issues did CoModeler find? Were they real issues or false positives?</li>
+            <li>How complete was the documentation? Would you trust it without a manual review?</li>
+            <li>How long would this documentation have taken to produce manually?</li>
           </ul>
         </div>
       </div>
+
       <div class="prevnext-nav">
-      <a class="prevnext-prev" href="./02-case-study.html">&larr; Case Study</a>
-      <a class="prevnext-next" href="./04-agent-studio.html">Agent Studio &rarr;</a>
+        <a class="prevnext-prev" href="./02-case-study.html">&larr; Case Study</a>
+        <a class="prevnext-next" href="./04-agent-studio.html">Agent Studio &rarr;</a>
       </div>
     </div>
   </main>

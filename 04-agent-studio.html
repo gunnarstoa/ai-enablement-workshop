@@ -49,187 +49,302 @@
       </div>
     </div>
     <div class="content-body">
+
+      <!-- ============================================================
+           TELL
+           ============================================================ -->
       <div class="tsd-banner">
         <div class="tsd-step tsd-step-tell">
           <div class="tsd-step-label">📖 Tell</div>
-          <div class="tsd-step-desc">Understand Agent Studio's role as the admin layer for all Anaplan AI. Learn the role chain: Tenant Admin → AI Admin → Custom Analyst configuration.</div>
+          <div class="tsd-step-desc">Agent Studio's role as the admin layer for all Anaplan AI. The role chain: Tenant Admin → AI Admin → Custom Analyst. Why the security model matters for customer conversations.</div>
         </div>
         <div class="tsd-step tsd-step-show">
           <div class="tsd-step-label">🖥️ Show</div>
-          <div class="tsd-step-desc">Walk through Agent Studio: workspace enablement for CoModeler, Analyst list, Custom Analyst configuration panel.</div>
+          <div class="tsd-step-desc">Live walkthrough: CoModeler workspace enablement, Analysts list, Custom Analyst configuration — Data Sources and AI Context panels.</div>
         </div>
         <div class="tsd-step tsd-step-do">
           <div class="tsd-step-label">🛠️ Do</div>
-          <div class="tsd-step-desc">Complete Labs 3A (explore Agent Studio) and 3B (configure a Custom Analyst).</div>
+          <div class="tsd-step-desc">Complete Labs 3A (navigate Agent Studio, verify CoModeler access) and 3B (configure a Custom Analyst for NovaTrend).</div>
         </div>
       </div>
 
       <h2>What Agent Studio Is</h2>
       <p>Agent Studio is the <strong>administration layer</strong> for all Anaplan AI products. It is not an AI tool itself — it is the control plane that governs which users can access AI, which workspaces have CoModeler enabled, and how Custom Analysts are configured.</p>
 
-      <p>It was released after CoPlanet was sunsetted. The vision: a single admin destination for every Anaplan AI capability, current and future.</p>
+      <p>It replaced CoPlanet after that product was sunsetted. The vision: a single admin destination for every Anaplan AI capability, current and future.</p>
 
       <div class="screenshot-wrap">
         <img src="./img/ss-0840.jpg" alt="Agent Studio title slide" class="screenshot">
         <p class="screenshot-caption">Agent Studio — the admin layer for all Anaplan AI products (session slide 15)</p>
       </div>
 
-      <div class="screenshot-wrap">
-        <img src="./img/ss-2700.jpg" alt="Custom Analyst — Embedded, Trusted, Purpose-Built pillars" class="screenshot">
-        <p class="screenshot-caption">Custom Analyst with Agent Studio — three product pillars: Embedded, Trusted, Purpose-Built (slide 40)</p>
-      </div>
-
-      <h2>Architecture</h2>
-            <div class="table-wrap">
+      <h2>Architecture: Role Chain</h2>
+      <div class="table-wrap">
         <table>
           <thead><tr><th>Layer</th><th>Who</th><th>What They Control</th></tr></thead>
           <tbody>
-        <tr><td>Tenant Admin</td><td>Customer IT / Anaplan admin</td><td>Assigns AI Admin role to specific users. One-time setup per tenant.</td></tr>
-        <tr><td>AI Admin</td><td>Partner or customer power user</td><td>Enables CoModeler per workspace. Creates and configures Custom Analysts.</td></tr>
-        <tr><td>End User</td><td>Business user / planner</td><td>Queries Custom Analysts. Uses CoModeler if assigned to an enabled workspace.</td></tr>
+            <tr><td><strong>Tenant Admin</strong></td><td>Customer IT / Anaplan admin</td><td>Assigns the AI Admin role to specific users. One-time setup per tenant.</td></tr>
+            <tr><td><strong>AI Admin</strong></td><td>Partner or customer power user</td><td>Enables CoModeler per workspace. Creates and configures Custom Analysts.</td></tr>
+            <tr><td><strong>End User</strong></td><td>Business user / planner</td><td>Queries Custom Analysts. Uses CoModeler if assigned to an enabled workspace.</td></tr>
           </tbody>
         </table>
       </div>
 
       <div class="callout-note">
         <span class="callout-label">📝 Partner Access Note</span>
-        <p>As a partner, you <strong>can</strong> be assigned the AI Admin role on a customer's tenant — as long as the customer has licensed AI. This is different from Integration Admin, which is home-tenant locked. Partners can configure and manage AI on customer tenants directly.</p>
+        <p>As a partner, you <strong>can</strong> be assigned the AI Admin role on a customer's tenant — as long as the customer has licensed AI. This is different from Integration Admin (which is home-tenant locked). Partners can configure and manage AI on customer tenants directly.</p>
       </div>
 
       <div class="callout-warning">
-        <span class="callout-label">⚠️ Partner Tenant Only</span>
-        <p>Today, you will only see CoModeler inside your Carter (partner) tenant, <em>not</em> on customer tenants. This is by design — Anaplan wants customers to purchase CoModeler. Once the customer has licensed it, you can use it in their tenant.</p>
+        <span class="callout-label">⚠️ Partner Tenant Boundary</span>
+        <p>Today you will only see CoModeler inside your Carter (partner) tenant, <em>not</em> on customer tenants. This is by design — Anaplan wants customers to purchase CoModeler. Once the customer has licensed it, you can use it in their tenant.</p>
       </div>
 
       <h2>CoModeler Configuration in Agent Studio</h2>
-      <p>From Agent Studio → CoModeler tab, an AI Admin can:</p>
+      <p>From Agent Studio → <strong>CoModeler</strong> tab, an AI Admin can:</p>
       <ul>
         <li>Enable or disable CoModeler for specific workspaces (workspace-level granularity)</li>
         <li>Add new workspaces to the enabled list</li>
         <li>All workspace administrators in enabled workspaces automatically get CoModeler access</li>
       </ul>
 
-      <h2>Custom Analyst Architecture</h2>
+      <h2>Custom Analyst — What It Is</h2>
       <p>Custom Analyst is the Anaplan Analyst that <em>you</em> configure for your custom modules. Same underlying technology as the pre-built Finance Analysts — the difference is that you define the data scope, questions, context, and vocabulary.</p>
 
-      <p>How it works:</p>
+      <p>Leo's framing from the session: Custom Analyst is the evolution of CoPlanner. It's an end-user tool — not a model builder tool — to get real-time insights from Anaplan data using natural language. The power is in what you ask: "What is the forecast revenue for November 2026?" and it returns the exact number, with a source link.</p>
+
+      <div class="screenshot-wrap">
+        <img src="./img/ss-2700.jpg" alt="Custom Analyst with Agent Studio — Embedded, Trusted, Purpose-Built pillars" class="screenshot">
+        <p class="screenshot-caption">Custom Analyst with Agent Studio: three product pillars — Embedded (native to Anaplan, enforces RBAC), Trusted (secure platform, defined data scope, transparent logic), Purpose-Built (designed for custom planning models) (slide 40)</p>
+      </div>
+
+      <h2>How Custom Analyst Works — Step by Step</h2>
       <div class="step">
         <div class="step-badge">1</div>
-        <div class="step-content">End user asks a question in plain language via the Custom Analyst interface.</div>
+        <div class="step-content">End user asks a question in plain language via the Custom Analyst interface (in the Anaplan app).</div>
       </div>
       <div class="step">
         <div class="step-badge">2</div>
-        <div class="step-content">Question is sent to the LLM (currently OpenAI), which writes an Anaplan query based on the modules and line items you pre-configured.</div>
+        <div class="step-content">Question is sent to the LLM (currently OpenAI), which writes an Anaplan query based on the modules and line items you pre-configured in Agent Studio.</div>
       </div>
       <div class="step">
         <div class="step-badge">3</div>
-        <div class="step-content">Query is executed in Anaplan <strong>as the user who asked</strong> — security and access filters apply automatically.</div>
+        <div class="step-content">Query is executed in Anaplan <strong>as the user who asked</strong> — security and row-level access filters apply automatically. The AI cannot see data the user cannot see.</div>
       </div>
       <div class="step">
         <div class="step-badge">4</div>
-        <div class="step-content">Raw data returns to the LLM, which formats the final answer and presents it with a source link.</div>
+        <div class="step-content">Raw data returns to the LLM, which formats the final answer. If the question asks for a time series, it generates a chart. A source link shows exactly where the data came from.</div>
       </div>
       <div class="step">
         <div class="step-badge">5</div>
-        <div class="step-content">If the question cannot be answered (data not in scope, user lacks access), the analyst says so — it does not hallucinate an answer.</div>
+        <div class="step-content">If the question cannot be answered (data not in scope, user lacks access), the analyst says so. There is no hallucination path: either Anaplan has the number or it doesn't.</div>
       </div>
 
-      <h2>Security Model</h2>
-      <p>This is a key customer question. The answer is clear:</p>
+      <h2>Security Model — The Customer Question</h2>
+      <p>This comes up in every pre-sales conversation. The answers:</p>
       <ul>
         <li><strong>Queries run as the end user</strong> — not as the AI Admin or a service account</li>
-        <li><strong>Row-level security</strong> is enforced — if a user can't see a number in Anaplan, the analyst can't tell them that number</li>
-        <li><strong>Scope is pre-configured</strong> — the analyst only looks at modules and line items you explicitly add to its configuration. Nothing else is accessible.</li>
-        <li><strong>No hallucination path</strong> — if Anaplan doesn't have the answer, the analyst returns "I can't answer that" rather than generating a plausible-sounding wrong number.</li>
+        <li><strong>Row-level security is enforced</strong> — if a user can't see a number in Anaplan, the analyst cannot tell them that number</li>
+        <li><strong>Scope is pre-configured</strong> — the analyst only looks at modules and line items you explicitly add. Nothing else is accessible.</li>
+        <li><strong>No hallucination path</strong> — if Anaplan doesn't have the answer, the analyst returns "I can't answer that" rather than generating a plausible-sounding wrong number</li>
+        <li><strong>Data is not used for AI training</strong> — query data sent to the LLM is not retained or used to train future models</li>
       </ul>
 
-      <h2>Custom Analyst Configuration</h2>
-      <p>From Agent Studio → Analysts → New Custom Analyst:</p>
+      <h2>Configuring a Custom Analyst — Overview</h2>
+      <p>From Agent Studio → Analysts → Create New Custom Analyst. The configuration has four sections:</p>
       <ol>
-        <li><strong>Name &amp; AI Context</strong> — Give the analyst a name and write a description of what this configuration is for. The more detail here, the better the LLM understands context. Example: "This is a revenue planning analyst for NovaTrend's consumer goods FP&amp;A model covering regional and product-level forecast and actuals data."</li>
-        <li><strong>Data Sources</strong> — Add modules and select specific line items. Each line item gets a semantic description. Good semantics = good answers.</li>
-        <li><strong>Suggested Questions</strong> — Pre-configure 5–10 questions that the business uses naturally. Use the customer's vocabulary, not model builder vocabulary.</li>
-        <li><strong>Vocabulary</strong> — Add definitions for business terms. "OPEX = operating expenditure, including [specific line items in this model]."</li>
+        <li><strong>Name &amp; AI Context</strong> — Give the analyst a name. Write a description of the business context: what function this is for, what model it covers, what vocabulary the business uses. The more precise, the better the answers.</li>
+        <li><strong>Data Sources</strong> — Add modules and select specific line items. Each line item gets a semantic description. Good semantics = good answers. Bad or vague descriptions = confusing outputs.</li>
+        <li><strong>Suggested Questions</strong> — Pre-configure 5–10 questions the business actually uses. Write them in business language ("What is the forecast revenue for North America in Q3 2026?"), not model builder language ("What is the value in REV-01 line 4?").</li>
+        <li><strong>Testing Environment</strong> — Test all suggested questions before deploying. The testing tab shows what query was generated and which data was returned — essential for debugging poor answers.</li>
       </ol>
 
       <div class="callout-tip">
         <span class="callout-label">💡 Best Practice: Use CoModeler to Seed the Analyst</span>
-        <p>From Lab 2C, you exported a line item dictionary. Paste that into ChatGPT or Claude and ask: "Enrich these line item descriptions for use as semantic definitions in a conversational AI system. Make each description clear to a non-technical business user." Then import the enriched descriptions into your Custom Analyst. This is the workflow Leo demonstrated.</p>
+        <p>From Lab 2C, you exported a line item dictionary. Paste that into ChatGPT or Claude and ask: "Enrich these line item descriptions for use as semantic definitions in a conversational AI system. Make each description clear to a non-technical business user." Then paste the enriched descriptions into your Custom Analyst data source configuration. This is the workflow Leo demonstrated — it saves hours of manual description writing.</p>
       </div>
 
       <h2>Current Limitations</h2>
       <ul>
-        <li>Context window: ~5 follow-up questions per conversation before context is lost</li>
+        <li>Context window: ~5 follow-up questions per conversation before context degrades</li>
         <li>No cross-analyst queries — analysts cannot call each other</li>
-        <li>No API access — cannot be integrated externally yet</li>
-        <li>Visualizations are auto-generated (time series → line chart, rank → bar chart) but not configurable</li>
+        <li>No external API access — cannot be integrated into third-party tools yet</li>
+        <li>Visualizations are auto-generated (time series → line chart, ranking → bar chart) — not configurable</li>
         <li>No conversation history saved — each session starts fresh</li>
-        <li>LLM transition to Claude targeted H2 2026 — reconfiguration should not be required</li>
+        <li>LLM transition from OpenAI to Claude targeted H2 2026 — existing configurations should not require rebuild</li>
       </ul>
 
+      <!-- ============================================================
+           SHOW
+           ============================================================ -->
       <hr>
-      <h2>Lab 3A — Explore Agent Studio</h2>
-            <div class="mini-lab">
+      <h2 id="show">🖥️ Show — Agent Studio Live Walkthrough</h2>
+      <p>Walk through every screen participants will encounter in the labs. They should recognize each screen when they reach it in their own session.</p>
+
+      <h3>Show 1: Agent Studio — CoModeler Tab (Workspace Enablement)</h3>
+      <p>After navigating to Agent Studio (top-right dropdown → Agent Studio), the first thing an AI Admin sees is the Analyst tab. The CoModeler tab shows which workspaces have CoModeler activated. Only workspace admins in enabled workspaces can use CoModeler.</p>
+
+      <div class="screenshot-wrap">
+        <img src="./img/lab-3a-comodeler.jpg" alt="Agent Studio CoModeler tab showing list of workspaces with CoModeler enabled" class="screenshot">
+        <p class="screenshot-caption">Agent Studio → CoModeler tab. The message reads: "CoModeler is activated for workspace administrators on the workspaces listed below." Each workspace shows its Workspace ID. The "Add workspaces" button top-right is how a new workspace is enabled. This is what participants will see in Lab 3A Step 4.</p>
+      </div>
+
+      <h3>Show 2: Agent Studio — Analysts Tab (Analyst List)</h3>
+      <p>The Analysts tab lists all Custom Analyst configurations in the tenant — both pre-built Anaplan analysts (Finance, Workforce, etc.) and any custom configurations created by the AI Admin. From here, participants can open, edit, or create analysts.</p>
+
+      <div class="screenshot-wrap">
+        <img src="./img/lab-3a.jpg" alt="Agent Studio Analysts tab showing list of analyst configurations with name, description, workspaces, and last updated columns" class="screenshot">
+        <p class="screenshot-caption">Agent Studio → Analyst tab. Table columns: Name, Description, Workspaces, Last updated. Top-right buttons: Import configuration, Create configuration. This is the starting point for both Lab 3A (explore existing) and Lab 3B (create new).</p>
+      </div>
+
+      <h3>Show 3: Custom Analyst Configuration — Data Sources Panel</h3>
+      <p>Inside a Custom Analyst configuration, the Data Sources panel is where you define what data the analyst can access. Each model is added as a data source, and within it you select specific modules and line items. The red diamond icon indicates items that need semantic descriptions added.</p>
+
+      <div class="screenshot-wrap">
+        <img src="./img/lab-3b-datasources.jpg" alt="Agent Studio Data Sources configuration panel showing two models added as data sources with validation indicators" class="screenshot">
+        <p class="screenshot-caption">Custom Analyst configuration → Data sources panel. Left nav shows the five configuration sections: Data sources (selected), Suggested questions, AI context, Apps, Testing environment. The main area lists added models with their validation status. The description at top reads: "Add helpful descriptions to teach the AI agent what your data means so it can answer with accuracy and context." — this is the core of good analyst configuration.</p>
+      </div>
+
+      <h3>Show 4: Custom Analyst Configuration — AI Context Panel</h3>
+      <p>The AI Context panel is where you give the analyst its business identity. Two fields: Data Type (what kind of planning this is — e.g. "Revenue planning, FP&amp;A") and Business Context (2–4 sentences describing the business, the model, and what questions the analyst is expected to answer). The Guidance panel on the right provides examples.</p>
+
+      <div class="screenshot-wrap">
+        <img src="./img/lab-3b-aicontext.jpg" alt="Agent Studio AI context configuration panel showing Data type and Business context fields with guidance tips on the right" class="screenshot">
+        <p class="screenshot-caption">Custom Analyst configuration → AI context panel. Left: Data type and Business context input fields. Right: Guidance panel with tips — set a meaningful data type, describe the model's purpose, use consistent vocabulary, and keep it updated as the model evolves. The "UNSYNCED CHANGES" indicator appears until you save and sync. This panel is Step 3 of Lab 3B.</p>
+      </div>
+
+      <!-- ============================================================
+           DO — Lab 3A
+           ============================================================ -->
+      <hr>
+      <h2>Lab 3A — Navigate Agent Studio and Verify Access</h2>
+      <div class="mini-lab">
         <div class="mini-lab-header">
           <div class="mini-lab-number">3A</div>
           <div class="mini-lab-title">Navigate Agent Studio and Verify Access</div>
           <div class="mini-lab-duration">⏱ 15 min</div>
         </div>
         <div class="mini-lab-body">
-          <p><strong>Objective:</strong> Confirm Agent Studio access, review CoModeler workspace configuration, and explore the Analysts list.</p>
+          <p><strong>Objective:</strong> Confirm Agent Studio access, review CoModeler workspace configuration, and explore the Analysts list — building familiarity with the admin interface before creating anything.</p>
+
+          <h4>Before You Start</h4>
+          <ul>
+            <li>You need an account with the <strong>AI Admin role</strong> on your Anaplan tenant.</li>
+            <li>If you cannot see Agent Studio, your tenant admin has not assigned you the AI Admin role. Contact your workspace admin before proceeding.</li>
+          </ul>
+
           <h4>Steps</h4>
           <ol>
-          <li>Log into Anaplan with an account that has the AI Admin role.</li>
-          <li>Click the top-right dropdown → Agent Studio.</li>
-          <li>If you don't see Agent Studio, your tenant admin has not assigned you the AI Admin role yet. Contact your workspace admin.</li>
-          <li>Navigate to the CoModeler tab. Confirm your workspace appears in the enabled list.</li>
-          <li>Navigate to the Analysts tab. Review any existing configurations.</li>
-          <li>Click on a pre-built Anaplan Analyst (Finance or another if available). Note the data source configuration — how many modules and line items are pre-loaded?</li>
-          <li>Return to Analysts → note the configuration structure (name, AI context, data sources, suggested questions).</li>
+            <li>Log in to Anaplan.</li>
+            <li>Click your profile icon (top-right corner) → select <strong>Agent Studio</strong> from the dropdown. Agent Studio opens in a new tab.</li>
+            <li>If you don't see Agent Studio in the dropdown: your tenant admin needs to assign the AI Admin role to your account. This is a one-time setup — note this for the debrief.</li>
+            <li>Click the <strong>CoModeler</strong> tab in the left sidebar. You will see the list of workspaces with CoModeler enabled. Confirm your workspace appears here.</li>
+            <li>If your workspace is not listed, click <strong>Add workspaces</strong> (top right) and add it. All workspace admins in that workspace will then have CoModeler access.</li>
+            <li>Click the <strong>Analyst</strong> tab in the left sidebar. Review the list of existing analyst configurations.</li>
+            <li>Click on any existing analyst (a pre-built Anaplan analyst if available). Note the configuration structure — how many data sources? How detailed is the AI Context description?</li>
+            <li>Navigate through the tabs: Data sources → Suggested questions → AI context → Testing environment. Get familiar with the layout before Lab 3B.</li>
           </ol>
-          <h4>Debrief</h4>
+
+          <div class="screenshot-wrap">
+            <img src="./img/lab-3a-comodeler.jpg" alt="Agent Studio CoModeler tab — workspace list showing enabled workspaces" class="screenshot">
+            <p class="screenshot-caption">Step 4: The CoModeler tab showing which workspaces have CoModeler enabled. If your workspace is missing, use "Add workspaces" to enable it.</p>
+          </div>
+
+          <div class="screenshot-wrap">
+            <img src="./img/lab-3a.jpg" alt="Agent Studio Analysts tab — list of all analyst configurations" class="screenshot">
+            <p class="screenshot-caption">Step 6: The Analysts tab. Each row is an analyst configuration. "Create configuration" (top right) is where Lab 3B begins. Explore an existing configuration before creating your own.</p>
+          </div>
+
+          <h4>Debrief Questions</h4>
           <ul>
-          <li>Which workspaces are currently enabled for CoModeler in your tenant?</li>
-          <li>How many pre-built analysts are available? What functions do they cover?</li>
-          <li>What is the AI Context field in the pre-built analyst? How detailed is it?</li>
+            <li>Which workspaces are currently enabled for CoModeler in your tenant?</li>
+            <li>How many analyst configurations exist? Are any pre-built by Anaplan?</li>
+            <li>In a pre-built analyst, how detailed is the AI Context description? What business context does it include?</li>
+            <li>How many data sources (models) does a pre-built analyst reference?</li>
           </ul>
         </div>
       </div>
 
+      <!-- ============================================================
+           DO — Lab 3B
+           ============================================================ -->
       <hr>
       <h2>Lab 3B — Configure a Custom Analyst</h2>
-            <div class="mini-lab">
+      <div class="mini-lab">
         <div class="mini-lab-header">
           <div class="mini-lab-number">3B</div>
           <div class="mini-lab-title">Configure a Custom Analyst for NovaTrend</div>
           <div class="mini-lab-duration">⏱ 25 min</div>
         </div>
         <div class="mini-lab-body">
-          <p><strong>Objective:</strong> Create a working Custom Analyst configuration targeting NovaTrend's revenue module.</p>
+          <p><strong>Objective:</strong> Create a working Custom Analyst configuration targeting NovaTrend's revenue module — and test it with real questions.</p>
+
+          <h4>Before You Start</h4>
+          <ul>
+            <li>You should have the line item dictionary exported in Lab 2A or 2C. If not, run the documentation export from Lab 2C before proceeding.</li>
+            <li>You need the module you built in Lab 2B available in your Anaplan model — or use any revenue/FP&amp;A module you have access to.</li>
+          </ul>
+
           <h4>Steps</h4>
           <ol>
-          <li>In Agent Studio → Analysts → Create New Custom Analyst.</li>
-          <li>Name: 'NovaTrend Revenue Analyst'.</li>
-          <li>AI Context: Write 2–3 sentences describing NovaTrend's business (use the case study). Include: industry, planning scope, key metrics the analyst should understand.</li>
-          <li>Add Data Source: Select the module you built in Lab 2B (or any revenue/FP&amp;A module available).</li>
-          <li>Select 3–5 line items. For each, write a semantic description using business language (not model builder language).</li>
-          <li>Add 3 Suggested Questions that a NovaTrend planner would actually ask. Use their language: 'What is the forecast revenue for North America in Q3 2026?'</li>
-          <li>Save the configuration.</li>
-          <li>Open the analyst interface and test all 3 suggested questions. Note which ones return good answers and which fail.</li>
-          <li>For any failed question, adjust the semantic description of the relevant line item and retest.</li>
+            <li>In Agent Studio → Analysts tab → click <strong>Create configuration</strong>.</li>
+            <li>Enter the name: <strong>NovaTrend Revenue Analyst</strong>.</li>
+            <li>Click the <strong>AI context</strong> tab on the left. Fill in:
+              <ul>
+                <li><strong>Data type:</strong> Revenue planning and FP&amp;A</li>
+                <li><strong>Business context:</strong> Write 2–3 sentences describing NovaTrend (use the case study from page 2). Include: industry (consumer goods), planning scope (regional revenue and product-level forecast/actuals), and key metrics this analyst should understand.</li>
+              </ul>
+            </li>
+            <li>Click <strong>Save</strong> after filling in AI context.</li>
+            <li>Click the <strong>Data sources</strong> tab. Click <strong>Add data source</strong>.</li>
+            <li>Select the model containing the module you built in Lab 2B (or any revenue module available to you).</li>
+            <li>Inside the model, select the revenue module. Within that module, select <strong>3–5 line items</strong> (e.g. Revenue, Units Sold, Gross Margin).</li>
+            <li>For each line item, write a <strong>semantic description</strong> in plain business language. Use the exported line item dictionary from Lab 2C as your source — or write from scratch. Example: "Revenue: Total gross revenue in USD for the selected region and product, before any discounts or returns. This is the primary top-line metric for NovaTrend planning."</li>
+            <li>Click the <strong>Suggested questions</strong> tab. Add 3 questions a NovaTrend planner would actually ask. Write them in the planner's language, not model builder language. Examples:
+              <ul>
+                <li>"What is the forecast revenue for North America in Q3 2026?"</li>
+                <li>"Which product had the highest gross margin last quarter?"</li>
+                <li>"How does actual revenue compare to plan for EMEA in Q1 2026?"</li>
+              </ul>
+            </li>
+            <li>Click <strong>Save</strong> and then <strong>Sync</strong> the configuration (button in the top area — the status indicator changes from "Unsynced" to "Synced").</li>
+            <li>Click the <strong>Testing environment</strong> tab. Test each of your 3 suggested questions. For each:
+              <ul>
+                <li>Does it return an answer with a data value?</li>
+                <li>Does it provide a source link?</li>
+                <li>If it fails, return to the Data sources tab and improve the semantic description for the relevant line item, then re-sync and retest.</li>
+              </ul>
+            </li>
           </ol>
-          <h4>Debrief</h4>
+
+          <div class="screenshot-wrap">
+            <img src="./img/lab-3b-aicontext.jpg" alt="Custom Analyst AI context panel — Data type and Business context fields" class="screenshot">
+            <p class="screenshot-caption">Step 3: AI context panel. Data type goes in the top field; Business context in the larger text area. The Guidance panel on the right provides tips. The more specific you are about the model's purpose and vocabulary, the more accurate the analyst's answers will be.</p>
+          </div>
+
+          <div class="screenshot-wrap">
+            <img src="./img/lab-3b-datasources.jpg" alt="Custom Analyst Data Sources panel — models added as data sources with validate indicators" class="screenshot">
+            <p class="screenshot-caption">Steps 5–8: Data sources panel. Each added model shows here. Red diamond icons indicate line items that need semantic descriptions. Click into a module to add or edit descriptions for each line item. Do not leave descriptions blank — blank descriptions produce poor or failed answers.</p>
+          </div>
+
+          <div class="callout-tip">
+            <span class="callout-label">💡 Debugging Poor Answers</span>
+            <p>If a test question fails or returns a wrong number, the most common cause is a vague or missing semantic description. Open the data source, find the relevant line item, and rewrite the description with more business context. Re-sync and retest. This iteration cycle is normal — it typically takes 2–3 rounds to get consistently good answers.</p>
+          </div>
+
+          <h4>Debrief Questions</h4>
           <ul>
-          <li>Did all 3 test questions return correct answers? If not, what was wrong?</li>
-          <li>Did the analyst provide a source link showing where the data came from?</li>
-          <li>What semantic description change had the most impact on answer quality?</li>
-          <li>If a user asked a question outside your configured scope, what did the analyst say?</li>
+            <li>Did all 3 test questions return correct answers? If not, which ones failed and why?</li>
+            <li>Did the analyst provide a source link showing where the data came from?</li>
+            <li>What semantic description change had the most impact on answer quality?</li>
+            <li>If you asked a question outside your configured scope (e.g. about headcount, which you didn't configure), what did the analyst say?</li>
           </ul>
         </div>
       </div>
+
       <div class="prevnext-nav">
-      <a class="prevnext-prev" href="./03-comodeler.html">&larr; CoModeler Deep-Dive</a>
-      <a class="prevnext-next" href="./05-presales-demo.html">Pre-Sales Playbook &rarr;</a>
+        <a class="prevnext-prev" href="./03-comodeler.html">&larr; CoModeler Deep-Dive</a>
+        <a class="prevnext-next" href="./05-presales-demo.html">Pre-Sales Playbook &rarr;</a>
       </div>
     </div>
   </main>
